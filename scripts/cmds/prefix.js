@@ -3,7 +3,7 @@ const { utils } = global;
 
 module.exports = {
 	config: {
-		name: "prefix",
+		name: "Prefix",
 		version: "1.3",
 		author: "NTKhang",
 		countDown: 5,
@@ -46,7 +46,7 @@ module.exports = {
 			confirmThisThread: "Please react to this message to confirm change prefix in your box chat",
 			successGlobal: "Changed prefix of system bot to: %1",
 			successThisThread: "Changed prefix in your box chat to: %1",
-			myPrefix: "⊰⊹🌊𝗣𝗥𝗘𝗙𝗜𝗫🌊⊹⊱\n⊰᯽⊱┈──╌❊\n➤🔑▣𝗖𝗠𝗗       「%1」 \n➤🗝️▣𝗦𝘆𝗦       「%2」\n⊰᯽⊱┈──╌❊\n【𝗧𝗬𝗣𝗘: %1help 𝚏𝚘𝚛 𝚊𝚕𝚕 𝗖𝗠𝗗𝗦】"
+			myPrefix: "⊰⊹🌊【﻿ＨＹＤＲＡ】🌊⊹⊱\n⊰᯽⊱┈──╌❊\n➤🔑▣𝗖𝗠𝗗       「%1」 \n➤🗝️▣𝗦𝘆𝗦       「%2」\n⊰᯽⊱┈──╌❊\n【𝗧𝗬𝗣𝗘: %1help 𝚏𝚘𝚛 𝚊𝚕𝚕 𝗖𝗠𝗗𝗦】"
 		}
 	},
 
