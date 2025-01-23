@@ -75,7 +75,6 @@ module.exports = {
 %7
 | type /sorthelp category TO VIEV ALL COMMAND
     ",
-      help: "『🌊𝗖𝗠𝗗 𝗟𝗜𝗦𝗧🔖🌊』
 			help2: "%1%2\n» ➤🌸 𝙸 𝚑𝚊𝚟𝚎 𝙰𝚌𝚝𝚞𝚊𝚕𝚕𝚢「 %e 」𝗖𝗠𝗗s that can be used, type %4help <command name> to view the details of how to use that command\n%2\n%5",
 			commandNotFound: "Command \"%1\" does not exist",
 			getInfoCommand: "%1\n» Description: %2\n» Other names: %3\n» Other names in your group: %4\n» Version: %5\n» Role: %6\n» Time per command: %7s\n» Author: %8\n» Usage guide:\n%9",
