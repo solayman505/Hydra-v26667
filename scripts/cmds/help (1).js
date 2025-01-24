@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "         [zen chiko | v1 🌟]\n      ";
+const doNotDelete = "         [hydra | v1 🌟]\n      ";
 const characters = "━━━━━━━━━━━━━━━";
 /** 
 * @author NTKhang
@@ -15,7 +15,7 @@ module.exports = {
 	config: {
 		name: "help",
 		version: "1.9",
-		author: "NTKhang",
+		author: "Pro_x",
 		countDown: 5,
 		role: 0,
 		shortDescription: {
@@ -241,4 +241,4 @@ function checkLangObject(data, langCode) {
 	if (typeof data == "object" && !Array.isArray(data))
 		return data[langCode] || data.en || "";
 	return "";
-}		
+}
