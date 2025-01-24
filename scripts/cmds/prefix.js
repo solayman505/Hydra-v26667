@@ -23,13 +23,13 @@ module.exports = {
 
   langs: {
     en: {
-      reset: "Lina prefix has been reset to default: %1",
-      onlyAdmin: "Sorry, only admin can change the prefix of the Lina bot system.",
-      confirmGlobal: "React to this message to confirm changing Lina's global prefix.",
-      confirmThisThread: "React to this message to confirm changing Lina's prefix in your chat box.",
-      successGlobal: "Changed the prefix of Lina's global system to: %1",
-      successThisThread: "Changed Lina's prefix in your chat box to: %1",
-      myPrefix: "Hello, my name is Lina (⁠ ⁠◜⁠‿⁠◝⁠ ⁠)⁠♡\nHere's my prefix:\n🌸Lina prefix system: %1\n🌸Lina prefix in your box: %2"
+      reset: "Hydra prefix has been reset to default: %1",
+      onlyAdmin: "Sorry, only admin can change the prefix of the Hydra bot system.",
+      confirmGlobal: "React to this message to confirm changing Hydra's global prefix.",
+      confirmThisThread: "React to this message to confirm changing Hydra's prefix in your chat box.",
+      successGlobal: "Changed the prefix of Hydra's global system to: %1",
+      successThisThread: "Changed Hydra's prefix in your chat box to: %1",
+      myPrefix: "Hello, my name is Hydra (⁠ ⁠◜⁠‿⁠◝⁠ ⁠)⁠♡\nHere's my prefix:\n🌸Hydra prefix system: %1\n🌸Hydra prefix in your box: %2"
     }
   },
 
