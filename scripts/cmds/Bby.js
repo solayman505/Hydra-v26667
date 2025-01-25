@@ -103,73 +103,7 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
       const data = (await axios.get(`${link}?text=amar name ki&senderID=${uid}&key=intro`)).data.reply;
       return api.sendMessage(data, event.threadID, event.messageID);
     }
-    if (
-  dipto.includes('amar name ki') || 
-  dipto.includes('amr nam ki') || 
-  dipto.includes('amar nam ki') || 
-  dipto.includes('amr name ki') || 
-  dipto.includes('whats my name') || 
-  dipto.includes('amar nam ki bol') || 
-  dipto.includes('amake ki bolo')
-) {
-  const data = (await axios.get(`${link}?text=amar name ki&senderID=${uid}&key=intro`)).data.reply;
-  return api.sendMessage(data, event.threadID, event.messageID);
-}
-
-if (
-  dipto.includes('tumi ke') || 
-  dipto.includes('tumi kon') || 
-  dipto.includes('tumi kon bot') || 
-  dipto.includes('ke tumi') || 
-  dipto.includes('bot tumi ke') || 
-  dipto.includes('ke') || 
-  dipto.includes('babe tumi ke')
-) {
-  const botReply = "Ami Dipto er coding e baniyeche ekta bot. Ki help korte pari?";
-  return api.sendMessage(botReply, event.threadID, event.messageID);
-}
-
-if (
-  dipto.includes('kemon acho') || 
-  dipto.includes('tumi kemon acho') || 
-  dipto.includes('baby kemon') || 
-  dipto.includes('kemon') || 
-  dipto.includes('tumi thik acho')
-) {
-  const botReply = "Ami bhalo achi! Tumio ki bhalo acho?";
-  return api.sendMessage(botReply, event.threadID, event.messageID);
-}
-
-if (
-  dipto.includes('khabo ki') || 
-  dipto.includes('ki khabo') || 
-  dipto.includes('ki khete paro') || 
-  dipto.includes('kheyecho') || 
-  dipto.includes('ami ki khabo') || 
-  dipto.includes('khawa')
-) {
-  const botReply = "Pizza, biryani, ar ice cream khub moja hobe! Tumi ki khete chao?";
-  return api.sendMessage(botReply, event.threadID, event.messageID);
-}
-
-if (
-  dipto.includes('valobashi') || 
-  dipto.includes('ami tomake valobashi') || 
-  dipto.includes('babe ami tomake valobashi') || 
-  dipto.includes('love you') || 
-  dipto.includes('ami valobashi')
-) {
-  const botReply = "Awww! Ami o tomake valobashi 😄";
-  return api.sendMessage(botReply, event.threadID, event.messageID);
-}
-
-if (
-  dipto.includes('help') || 
-  dipto.includes('baby help') || 
-  dipto.includes('bby help') || 
-  dipto.includes('ki korbo') || 
-  dipto.includes('help korte paro')
-) {
+     {
   const botReply = "Help er jonno 'baby' type kore message pathao. Ki niye help chai bolo!";
   return api.sendMessage(botReply, event.threadID, event.messageID);
         }
