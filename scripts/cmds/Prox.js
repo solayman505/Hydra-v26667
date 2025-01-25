@@ -13,4 +13,4 @@ async function getAIResponse(message) {
   return response.data.choices[0].text.trim();
 }
 
-module.exports = { getAIResponse };
+module.exports = {bot};
