@@ -301,4 +301,17 @@ function compareVersion(version1, version2) {
 	return 0; // version1 = version2
 }
 
+// প্রয়োজনীয় ফাইল ইম্পোর্ট করা
+const autoReply = require('./func/autoReply');
 
+// মেসেজ ইভেন্ট পরিচালনা করা
+client.on('message', (message) => {
+  // যদি মেসেজ নিজের অ্যাকাউন্ট থেকে হয়, তবে কিছু না করা
+  if (message.senderID === client.userID) return;
+
+  // অটো রিপ্লাই ফাংশন কল করা
+  const reply = autoReply(message.body);
+  if (reply) { // যদি রিপ্লাই মেলে
+    client.sendMessage(reply, message.threadID); // রিপ্লাই মেসেজ পাঠানো
+  }
+});
