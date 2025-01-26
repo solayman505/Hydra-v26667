@@ -28,7 +28,7 @@
 		"logsbot": {
 			"allow": true
 		}
-	}
+	},
 	{
   "keywords": {
     "hello": "Hi! How can I help you?",
@@ -36,4 +36,4 @@
     "aa2": "Sure! What do you need help with?"
   }
 }
-}
+
