@@ -29,4 +29,11 @@
 			"allow": true
 		}
 	}
+	{
+  "keywords": {
+    "hello": "Hi! How can I help you?",
+    "bye": "Goodbye! Have a nice day!",
+    "aa2": "Sure! What do you need help with?"
+  }
+}
 }
