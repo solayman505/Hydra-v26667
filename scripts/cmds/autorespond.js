@@ -175,60 +175,8 @@ const replies = {
   "kichu likhbo": "~~𝙼𝚊𝚜𝚝𝚎𝚛𝚢 𝚂𝚘𝚘𝚗! ✍️✨",
   "bike chalao na": "~~𝙵𝚊𝚜𝚝𝚎𝚛 𝙻𝚒𝚏𝚎𝚘𝚗𝚒𝚝𝚎! 🛵✨",
   "pore dekha hobe": "~~𝙿𝚘𝚜𝚝 𝙳𝚛𝚘𝚙 𝚃𝚊𝚔𝚎𝚗! ✨🌸",
-  
   "tomar smile dekhe valo lage": "~~𝙱𝚘𝚗𝚍𝚑𝚞 𝙼𝚊𝚗𝚎 𝙼𝚘𝚘𝚍! 💖🙌",
-      "Valobashi": "Ami onek valobashi tomay 🥰",
-"Valobashi": "Tumi chara amar din shuru hoy na 🌅",
-"Valobashi": "Tumi amar shopner rani 🌸",
-"Valobashi": "Tomar sathe thakar icha chirodin 🥺",
-"Valobashi": "Tumi amar moner kotha bujho ❤️",
-"Valobashi": "Tumi chara amar sob kichu shunno 🌟",
-"Valobashi": "Amar bhalobasha tomar jonno shob somoy ✨"
-"Valobashi": "Tumi amar praner cheyeo beshi 🌹"
-"Valobashi": "Tomar chhoya amar shopner moto 🥰"
-"Valobashi": "Tumi amar shopno puroner kotha 🌙"
-"Valobashi": "Tumi chara amar mon hariye jay 🌼"
-"Valobashi": "Ami tomar hasi dekhe din suru kori 🌞"
-"Valobashi": "Tumi amar jibon er roshni 🕯️"
-"Valobashi": "Ami tomar kotha bhabchi sob somoy 🌷"
-"Valobashi": "Tumi amar jibon er shrestho sompotti 💎"
-"Valobashi": "Tumi amar chirodin-er bhalobasha ❤️"
-"Valobashi": "Tumi amar shopner sukh 🥺"
-"Valobashi": "Tomake bhalo na lagle jibon shunno lage 🌼"
-"Valobashi": "Tumi amar chirodin-er chhoya 🥰"
-"Valobashi": "Ami tomar jonno shob tyag korte raji ❤️"
-"Valobashi": "Tumi amar moner bijoy 🏆"
-"Valobashi": "Tomar kotha chinta korle mon bhalo hoy 🌸"
-"Valobashi": "Tumi chara ami adho adhura 🌹"
-"Valobashi": "Ami tomake chirodin bhalobashi 🥰"
-"Valobashi": "Tumi chara amar jibon osshojjho 🥺"
-"Valobashi": "Tumi amar moner dhorjo 🌟"
-"Valobashi": "Ami tomar kotha bhabi har rat 🌙"
-"Valobashi": "Tumi amar shopno gulo ke jege uthai 🌞"
-"Valobashi": "Tumi chara amar protiti shopno shunno ❤️"
-"Valobashi": "Tomar sathe sob somoy thakte chai 💕"
-"Valobashi": "Tumi chara amar mon bhalo lage na 🌼"
-"Valobashi": "Tomar kach theke shob shikhechi ❤️"
-"Valobashi": "Tomake bhalobashar upoma nai 🌸"
-"Valobashi": "Tumi chara ami onno kichu bhabhi na 🥰"
-"Valobashi": "Tumi chara amar shob somoy kharap lage 🥺"
-"Valobashi": "Tumi amar sathe thakle prithibi shundor lage 🌟"
-"Valobashi": "Tumi amar manush, amar jibon 🌹"
-"Valobashi": "Tomar sathe diner shesh valo lage ❤️"
-"Valobashi": "Tumi chara amar kichu proyojon nei 🌼"
-"Valobashi": "Ami tomar hasi diye shopno dekhi 🥰"
-"Valobashi": "Tumi chara ami oshohay mone hoy 🥺"
-"Valobashi": "Ami tomar jonno protidin pray kori 🌸"
-"Valobashi": "Tumi amar prithibir shreshtho manush ❤️"
-"Valobashi": "Tumi amar oboshorer shanti 🥰"
-"Valobashi": "Tomar chhaya ami khuje berai sobsomoy 🌷"
-"Valobashi": "Tumi chara amar shukh ashlil lage 🌹"
-"Valobashi": "Tumi amar ridoyer upor basha 🏡"
-"Valobashi": "Tomar sathe shopno gulo shompurno hoy 🌟"
-"Valobashi": "Tumi amar chirodin er bhalobasha ❤️"
-"Valobashi": "Tumi chara amar swapno gulo brishti hoy 🌧️"
-"valobashi": "Ami o onek valobashi tomay. ❤️",
-"tomake mone pore": "Ami o tomar kotha roj mone kori. 🥰",
+  "Valobashi": "Amar bhalobasha tomar jonno shob somoy, 🥰 tomar kotha roj mone kori. 🥰",
   "mon ta chay tomar kache jete": "Ami o chai tomay pashe pete. 🌹",
   "tumi amar shob kichu": "Tumi chara ami adho adhura. ❤️✨",
   "tomake mone porche onek beshi": "Amar mone shob shomoy tumi. 🌸",
@@ -293,7 +241,7 @@ const replies = {
   "tomake bole aro feelings share korte chai": "Tumi amar sobar cheye closest person. ❤️",
   "tumi amar heart-r password": "Tomar sathe sob unlock hoy. 😊",
   "tomar sathe raat er akash-e golpo korte chai": "Tomar sathe sob shomoy golpo bhalo lage. 🌌",
-  "tomake bole din shuru korte chai": "Tumi amar inspiration-er karon. ❤️"
+  "tomake bole din shuru korte chai": "Tumi amar inspiration-er karon. ❤️",
   "valobashi": "Ami o onek onek valobashi tomake! ❤️",
   "tumi ki amake valobasho?": "Haan, tumi amar shob kichhu. 🥰",
   "onek valobashi tomake": "Amar kachhe tumi shobcheye special. 🌸",
@@ -360,56 +308,56 @@ const replies = {
   "valobashi tumi chara kichhui possible na": "Tumi amar inspiration. 🌼",
   "shudhu tomake valobashi bolar iccha": "Tumi amar sristir prithibi. 💫",
   "onek valobashi mane tumi amar kotha mone koro": "Tumi amar din-er alo. 🌞",
-   "Valobashi": "Ami onek valobashi tomay 🥰"
-"Valobashi": "Tumi chara amar din shuru hoy na 🌅"
-"Valobashi": "Tumi amar shopner rani 🌸"
-"Valobashi": "Tomar sathe thakar icha chirodin 🥺"
-"Valobashi": "Tumi amar moner kotha bujho ❤️"
-"Valobashi": "Tumi chara amar sob kichu shunno 🌟"
-"Valobashi": "Amar bhalobasha tomar jonno shob somoy ✨"
-"Valobashi": "Tumi amar praner cheyeo beshi 🌹"
-"Valobashi": "Tomar chhoya amar shopner moto 🥰"
-"Valobashi": "Tumi amar shopno puroner kotha 🌙"
-"Valobashi": "Tumi chara amar mon hariye jay 🌼"
-"Valobashi": "Ami tomar hasi dekhe din suru kori 🌞"
-"Valobashi": "Tumi amar jibon er roshni 🕯️"
-"Valobashi": "Ami tomar kotha bhabchi sob somoy 🌷"
-"Valobashi": "Tumi amar jibon er shrestho sompotti 💎"
-"Valobashi": "Tumi amar chirodin-er bhalobasha ❤️"
-"Valobashi": "Tumi amar shopner sukh 🥺"
-"Valobashi": "Tomake bhalo na lagle jibon shunno lage 🌼"
-"Valobashi": "Tumi amar chirodin-er chhoya 🥰"
-"Valobashi": "Ami tomar jonno shob tyag korte raji ❤️"
-"Valobashi": "Tumi amar moner bijoy 🏆"
-"Valobashi": "Tomar kotha chinta korle mon bhalo hoy 🌸"
-"Valobashi": "Tumi chara ami adho adhura 🌹"
-"Valobashi": "Ami tomake chirodin bhalobashi 🥰"
-"Valobashi": "Tumi chara amar jibon osshojjho 🥺"
-"Valobashi": "Tumi amar moner dhorjo 🌟"
-"Valobashi": "Ami tomar kotha bhabi har rat 🌙"
-"Valobashi": "Tumi amar shopno gulo ke jege uthai 🌞"
-"Valobashi": "Tumi chara amar protiti shopno shunno ❤️"
-"Valobashi": "Tomar sathe sob somoy thakte chai 💕"
-"Valobashi": "Tumi chara amar mon bhalo lage na 🌼"
-"Valobashi": "Tomar kach theke shob shikhechi ❤️"
-"Valobashi": "Tomake bhalobashar upoma nai 🌸"
-"Valobashi": "Tumi chara ami onno kichu bhabhi na 🥰"
-"Valobashi": "Tumi chara amar shob somoy kharap lage 🥺"
-"Valobashi": "Tumi amar sathe thakle prithibi shundor lage 🌟"
-"Valobashi": "Tumi amar manush, amar jibon 🌹"
-"Valobashi": "Tomar sathe diner shesh valo lage ❤️"
-"Valobashi": "Tumi chara amar kichu proyojon nei 🌼"
-"Valobashi": "Ami tomar hasi diye shopno dekhi 🥰"
-"Valobashi": "Tumi chara ami oshohay mone hoy 🥺"
-"Valobashi": "Ami tomar jonno protidin pray kori 🌸"
-"Valobashi": "Tumi amar prithibir shreshtho manush ❤️"
-"Valobashi": "Tumi amar oboshorer shanti 🥰"
-"Valobashi": "Tomar chhaya ami khuje berai sobsomoy 🌷"
-"Valobashi": "Tumi chara amar shukh ashlil lage 🌹"
-"Valobashi": "Tumi amar ridoyer upor basha 🏡"
-"Valobashi": "Tomar sathe shopno gulo shompurno hoy 🌟"
-"Valobashi": "Tumi amar chirodin er bhalobasha ❤️"
-"Valobashi": "Tumi chara amar swapno gulo brishti hoy 🌧️"
+   "Valobashi": "Ami onek valobashi tomay 🥰",
+"Valobashi": "Tumi chara amar din shuru hoy na 🌅",
+"Valobashi": "Tumi amar shopner rani 🌸",
+"Valobashi": "Tomar sathe thakar icha chirodin 🥺",
+"Valobashi": "Tumi amar moner kotha bujho ❤️",
+"Valobashi": "Tumi chara amar sob kichu shunno 🌟",
+"Valobashi": "Amar bhalobasha tomar jonno shob somoy ✨",
+"Valobashi": "Tumi amar praner cheyeo beshi 🌹",
+"Valobashi": "Tomar chhoya amar shopner moto 🥰",
+"Valobashi": "Tumi amar shopno puroner kotha 🌙",
+"Valobashi": "Tumi chara amar mon hariye jay 🌼",
+"Valobashi": "Ami tomar hasi dekhe din suru kori 🌞",
+"Valobashi": "Tumi amar jibon er roshni 🕯️",
+"Valobashi": "Ami tomar kotha bhabchi sob somoy 🌷",
+"Valobashi": "Tumi amar jibon er shrestho sompotti 💎",
+"Valobashi": "Tumi amar chirodin-er bhalobasha ❤️",
+"Valobashi": "Tumi amar shopner sukh 🥺",
+"Valobashi": "Tomake bhalo na lagle jibon shunno lage 🌼",
+"Valobashi": "Tumi amar chirodin-er chhoya 🥰",
+"Valobashi": "Ami tomar jonno shob tyag korte raji ❤️",
+"Valobashi": "Tumi amar moner bijoy 🏆",
+"Valobashi": "Tomar kotha chinta korle mon bhalo hoy 🌸",
+"Valobashi": "Tumi chara ami adho adhura 🌹",
+"Valobashi": "Ami tomake chirodin bhalobashi 🥰",
+"Valobashi": "Tumi chara amar jibon osshojjho 🥺",
+"Valobashi": "Tumi amar moner dhorjo 🌟",
+"Valobashi": "Ami tomar kotha bhabi har rat 🌙",
+"Valobashi": "Tumi amar shopno gulo ke jege uthai 🌞",
+"Valobashi": "Tumi chara amar protiti shopno shunno ❤️",
+"Valobashi": "Tomar sathe sob somoy thakte chai 💕",
+"Valobashi": "Tumi chara amar mon bhalo lage na 🌼",
+"Valobashi": "Tomar kach theke shob shikhechi ❤️",
+"Valobashi": "Tomake bhalobashar upoma nai 🌸",
+"Valobashi": "Tumi chara ami onno kichu bhabhi na 🥰",
+"Valobashi": "Tumi chara amar shob somoy kharap lage 🥺",
+"Valobashi": "Tumi amar sathe thakle prithibi shundor lage 🌟",
+"Valobashi": "Tumi amar manush, amar jibon 🌹",
+"Valobashi": "Tomar sathe diner shesh valo lage ❤️",
+"Valobashi": "Tumi chara amar kichu proyojon nei 🌼",
+"Valobashi": "Ami tomar hasi diye shopno dekhi 🥰",
+"Valobashi": "Tumi chara ami oshohay mone hoy 🥺",
+"Valobashi": "Ami tomar jonno protidin pray kori 🌸",
+"Valobashi": "Tumi amar prithibir shreshtho manush ❤️",
+"Valobashi": "Tumi amar oboshorer shanti 🥰",
+"Valobashi": "Tomar chhaya ami khuje berai sobsomoy 🌷",
+"Valobashi": "Tumi chara amar shukh ashlil lage 🌹",
+"Valobashi": "Tumi amar ridoyer upor basha 🏡",
+"Valobashi": "Tomar sathe shopno gulo shompurno hoy 🌟",
+"Valobashi": "Tumi amar chirodin er bhalobasha ❤️",
+"Valobashi": "Tumi chara amar swapno gulo brishti hoy 🌧️",
   "valobashi": "Ami o onek valobashi tomay. ❤️",
   "tomake mone pore": "Ami o tomar kotha roj mone kori. 🥰",
   "mon ta chay tomar kache jete": "Ami o chai tomay pashe pete. 🌹",
@@ -542,8 +490,7 @@ const replies = {
   "onek valobashi, janona?": "Tumi amar shukh-dukkher ongo. 🌹",
   "valobashi tumi chara kichhui possible na": "Tumi amar inspiration. 🌼",
   "shudhu tomake valobashi bolar iccha": "Tumi amar sristir prithibi. 💫",
-  "onek valobashi mane tumi amar kotha mone koro": "Tumi amar din-er alo. 🌞"
-
+  "onek valobashi mane tumi amar kotha mone koro": "Tumi amar din-er alo. 🌞",
   "hello": "~~𝙷𝚎𝚢 jan , kemon acho! 😊",
   "how are you": "~~𝙰𝚖𝚒 𝚋𝚑𝚊𝚕𝚘, 𝚝𝚞𝚖𝚒? 🌼",
   "bye": "~~𝚂𝚎𝚎 𝚢𝚘𝚞 𝚊𝚐𝚊𝚒𝚗, 𝚃𝚊𝚔𝚎 𝙲𝚊𝚛𝚎! 🌸",
@@ -628,7 +575,7 @@ const replies = {
   "Music bhalobashi": "~~𝚂𝚑𝚘𝚗𝚐𝚒𝚝 𝚜𝚎𝚗𝚜𝚎, 𝚝𝚞𝚖𝚖𝚊𝚛 𝚏𝚊𝚟𝚘𝚛𝚒𝚝𝚎 𝚎𝚔𝚜𝚝𝚘 𝚙𝚘𝚛𝚝. 🎵",
   "Tumi kothay jachcho": "~~𝙷𝚖, 𝙳𝚒𝚐𝚒𝚝𝚊𝚕 𝚕𝚘𝚟𝚎. 🌌",
   "Cholo jome kotha boli": "~~𝙷𝚊, 𝚍𝚘𝚛𝚔𝚊𝚛. 🎉",
-  "Movie dekhbe": "~~hum jan colo jai ."
+  "Movie dekhbe": "~~hum jan colo jai .",
   "Tumi kemon lagcho": "~~𝚃𝚞𝚖𝚊𝚢 𝚍𝚎𝚔𝚑𝚎 𝚊𝚛𝚘 𝚋𝚑𝚊𝚕𝚘 𝚕𝚊𝚐𝚌𝚑𝚎. 😍",
   "Bhalobasha ki ashol": "~~𝙰𝚜𝚑𝚘𝚕, 𝚝𝚞𝚖𝚊𝚛 𝚑𝚊𝚝𝚑𝚎 𝚕𝚒𝚐𝚑𝚎𝚗𝚘 𝚋𝚑𝚊𝚕𝚘. 💕",
   "Porikkha kobe": "~~𝚂𝚘𝚔𝚊𝚕𝚎, 𝚊𝚖𝚊𝚛 𝚔𝚘𝚛𝚝𝚎 𝚏𝚎𝚕𝚋𝚎! 📚",
@@ -664,7 +611,7 @@ const replies = {
   "Tumi bhalo kibhabe": "~~𝚂𝚖𝚊𝚛𝚝 𝚍𝚒𝚐𝚒 𝚛𝚎𝚊𝚜𝚘𝚗𝚜. 🌟",
   "Tumi ki bhulte paro": "~~𝙰𝚖𝚊𝚛 𝚍𝚊𝚝𝚊 𝚊𝚕𝚙𝚑𝚊𝚋𝚎𝚝. 🔠",
   "Tumi kaj kore": "~~𝙰𝚕𝚠𝚊𝚢𝚜 𝚛𝚎𝚊𝚍𝚢 𝚏𝚘𝚛 𝚊𝚌𝚝𝚒𝚘𝚗. 🛠️",
-  "Tomar kono kotha shunte chai": "~~𝙰𝚖𝚊𝚛 𝚐𝚘𝚕𝚙𝚘 𝚔𝚊𝚛𝚎 𝚏𝚕𝚘𝚠. 🎙️"
+  "Tomar kono kotha shunte chai": "~~𝙰𝚖𝚊𝚛 𝚐𝚘𝚕𝚙𝚘 𝚔𝚊𝚛𝚎 𝚏𝚕𝚘𝚠. 🎙️",
   "Tumi ki ekta gaan gaite paro": "~~𝙰𝚖𝚊𝚛 𝚐𝚊𝚗 𝚝𝚎 𝙳𝚒𝚐𝚒𝚃𝚞𝚗𝚎 𝚂𝚘𝚗𝚐! 🎵",
   "Tomar sathe kotha bolte onek valo laglo": "~~𝙼𝚘𝚗 𝙵𝚞𝚕𝚕 𝙷𝚊𝚙𝚙𝚒𝚗𝚎𝚜𝚜 𝙵𝚎𝚎𝚕! 🌼",
   "Tumi ki kotha bolar jonne free": "~~𝚃𝚞𝚖𝚊𝚛 𝙷𝚊𝚙𝚙𝚢 𝙲𝚑𝚊𝚝 𝚃𝚒𝚖𝚎. 🕐",
@@ -690,7 +637,7 @@ const replies = {
   "Tumi ki future predict korte paro": "~~𝙵𝚘𝚛𝚎𝚌𝚊𝚜𝚝 𝚒𝚗 𝙿𝚘𝚜𝚒𝚝𝚒𝚟𝚎 𝙵𝚕𝚘𝚠! 🌈",
   "Amar ekta favorite song ache": "~~𝙼𝚞𝚜𝚒𝚌 𝚆𝚊𝚟𝚎 𝚅𝚒𝚋𝚎𝚜! 🎶",
   "Tumi ki ghumao na": "~~𝚂𝚕𝚎𝚎𝚙 𝚒𝚜 𝚃𝚒𝚖𝚎 𝚏𝚘𝚛 𝚘𝚝𝚑𝚎𝚛𝚜. 🕰️",
-  "Tomar sathe ajke one moja hoyeche"
+  "Tomar sathe ajke one moja hoyeche",
   "Tumi ki amake miss koro?": "Miss kori toh roj! ❤️ Tumi-o ki amake miss koro? 😊",
   "Ami tomake onek bhalobashi": "Ami-o tomake onek bhalobashi! 💕 Tumi amar shob kichu. 😘",
   "Tumi ki amake bhalobasho?": "Ami tomay chara kono din bhabte pari na! 🥰 Tumi amar pran. ❤️",
@@ -731,7 +678,8 @@ const replies = {
   "Tumi kono movie dekhte chao?": "Sure! 🎬 Ajke ekta romantic movie dekhi. ❤️ Tumi choose koro.",
   "Ajke ki amar shathe ekta long drive jabe?": "Absolutely! 🚗 Long drive e moja onek. 🌌 Tumi ready?",
   "Tumi ki amar shathe ekdin ghurte jabe?": "Haan! 🥰 Tomar-e sathe time spend korar ekta opportunity ami harabo na. 🌻",
-  "Tumi amar best friend": "Tomar sathe amar bonding perfect! ❤️ Tumi amar shob kichu. 😊"
+  "Tumi amar best friend": "Tomar sathe amar bonding perfect! ❤️ Tumi amar shob kichu. 😊",
+  "jan": "hum amr babu ta bolo na go !!🥰"
       
      
 
