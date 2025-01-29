@@ -53,10 +53,10 @@ module.exports = {
         return message.reply(`This command only work with mention ⚠️ \nFor your confession follow:\n${p}confess @tag\nor\n${p}confess @tag1 @tag2 \n\n-If single tag then sender id will be boy in template and tag id will be girl\n\n-If double tag then tag1 will be boy and tag2 will in girl\n\n-Type '${p}help confess' for more`);
     }
     //only siam 
-    if ((uid1 === '100081658294585' || uid2 === '100081658294585') && (uid1 !== '100010335499038' && uid2 !== '100010335499038')) {
-  uid1 = '100010335499038';
-  uid2 = '100081658294585';
-  message.reply("sorry i have boyfriend...🥱💁💗\n\nOnly SiAM allowed 🥲🤭");
+    if ((uid1 === '100057041031881' || uid2 === '') && (uid1 !== '100057041031881' && uid2 !== '')) {
+  uid1 = '100057041031881';
+  uid2 = '';
+  message.reply("sorry i have boyfriend...🥱💁💗\n\nNoBody is allowed 🥲🤭");
     }
 
     
