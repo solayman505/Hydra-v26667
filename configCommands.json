@@ -68,15 +68,5 @@
       "allow": true
     }
   },
-  "commandUnload": [
-    "helpv2.js",
-    "4k.js",
-    "shortcut.js",
-    "yy.js",
-    "prefix.js",
-    "hentaivid.js",
-    "fight.js",
-    "0ra.js",
-    "pasterbin.js"
-  ]
+  "commandUnload": []
 }
