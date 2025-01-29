@@ -11,7 +11,7 @@ module.exports = {
   config: {
     name: "qz",
     aliases: ["qz"],
-    version: "1.0",
+    version: "1.0"
     author: "Dipto",
     countDown: 0,
     role: 0,
@@ -89,8 +89,8 @@ const { correctAnswer, nameUser, author } = Reply;
         if (userReply === correctAnswer.toLowerCase()) {
           api.unsendMessage(Reply.messageID)
           .catch(console.error);
-          let rewardCoins = 300;
-          let rewardExp = 100;
+          let rewardCoins = 104036;
+          let rewardExp = 4036;
           let userData = await usersData.get(author);
           await usersData.set(author, {
           money: userData.money + rewardCoins,
