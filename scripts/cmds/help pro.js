@@ -6,116 +6,102 @@ const { commands, aliases } = global.GoatBot;
 module.exports = {
   config: {
     name: "help",
-    version: "2.0",
+    version: "1.0",
     author: "Nazrul",
     countDown: 10,
     role: 0,
-    shortDescription: "Get a list of all commands or command details.",
+    shortDescription: "✨ Get a list of all commands or command details ✨",
     longDescription: "Displays a categorized list of commands or detailed information about a specific command.",
     category: "general",
     guide: "{pn} or {pn} <command>",
   },
 
-  onStart: async function ({ api, event, args, role }) {
-    const { threadID, messageID } = event;
-    const prefix = getPrefix(threadID);
+  onStart: async function ({ message, args, event, role, api }) {
+    const prefix = getPrefix(event.threadID);
 
-    // Command Details
-    if (args[0] && isNaN(parseInt(args[0]))) {
-      const commandName = args[0].toLowerCase();
-      const command = commands.get(commandName) || commands.get(aliases.get(commandName));
-
-      if (!command) return api.sendMessage(`⚠️ Command "${commandName}" not found.`, threadID, messageID);
-
-      const configCommand = command.config;
-      const roleText = roleTextToString(configCommand.role);
-      const author = configCommand.author || "Unknown";
-      const description = configCommand.longDescription || configCommand.shortDescription || "No description available.";
-      const usage = (configCommand.guide || "No guide available.")
-        .replace(/{pn}/g, prefix + configCommand.name)
-        .replace(/{p}/g, prefix)
-        .replace(/{n}/g, configCommand.name);
-
-      let detailMsg = `📜 **Command Information** 📜\n\n`;
-      detailMsg += `🔹 **Name:** ${configCommand.name}\n`;
-      detailMsg += `🔹 **Version:** ${configCommand.version}\n`;
-      detailMsg += `🔹 **Required Role:** ${roleText}\n`;
-      detailMsg += `🔹 **Author:** ${author}\n`;
-      detailMsg += `🔹 **Category:** ${configCommand.category}\n`;
-      detailMsg += `🔹 **Description:** ${description}\n`;
-      detailMsg += `🔹 **Usage:** ${usage}\n`;
-      detailMsg += `🔹 **Cooldown:** ${configCommand.countDown} seconds\n`;
-      detailMsg += `🔹 **Aliases:** ${configCommand.aliases ? configCommand.aliases.join(", ") : "None"}\n`;
-
-      return api.sendMessage(detailMsg, threadID, messageID);
-    }
-
-    // Command List with Pagination
-    const allCommands = [...commands.keys()].filter(cmd => commands.get(cmd).config.role <= role);
-    const totalCommands = allCommands.length;
-    const commandsPerPage = 100;
-    const totalPages = Math.ceil(totalCommands / commandsPerPage);
-    const page = Math.max(1, Math.min(totalPages, parseInt(args[0]) || 1));
-
-    let msg = `💫 𝗕𝗼𝘁 𓂃♡ 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𓂃♡ 𝗟𝗶𝘀𝘁 💫\n\n`;
-    msg += `╭────────────────────╮\n`;
-    msg += `│ **Page ${page} / ${totalPages}**\n`;
-    msg += `├────────────────────┤\n`;
-
-    const startIdx = (page - 1) * commandsPerPage;
-    const endIdx = Math.min(startIdx + commandsPerPage, totalCommands);
-
-    for (let i = startIdx; i < endIdx; i++) {
-      const cmd = commands.get(allCommands[i]);
-      msg += `│ ✨ **${cmd.config.name}** - ${cmd.config.shortDescription || "No description"}\n`;
-    }
-
-    msg += `╰────────────────────╯\n\n`;
-    msg += `📌 **Use "${prefix}help <command>" for details.**\n`;
-    msg += `📌 **Use "${prefix}help [page]" to navigate pages.**\n`;
-    msg += `\n🔹 **Total Commands:** ${totalCommands}\n`;
-    msg += `🔹 **Prefix:** ${prefix}\n`;
-    msg += `🔹 **Owner:** ♡ Nazrul ♡\n`;
-
-    // 100 Anime Girl Images
-    const animeImages = [
-      "https://i.imgur.com/gs8PSXG.jpeg",
-      "https://i.imgur.com/a1b2C3D.jpg",
-      "https://i.imgur.com/XyZ4a5B.jpg",
-      "https://i.imgur.com/BcD6eFg.jpg",
-      "https://i.imgur.com/LMN78OP.jpg",
-      "https://i.imgur.com/qRStUV1.jpg",
-      "https://i.imgur.com/vWXYza2.jpg",
-      "https://i.imgur.com/ABC3dEF.jpg",
-      "https://i.imgur.com/GHIJ4KL.jpg",
-      "https://i.imgur.com/MNO5PQR.jpg",
-      // ... Add up to 100 image links
-    ];
-    
-    const selectedImages = animeImages.sort(() => 0.5 - Math.random()).slice(0, 10); // Pick 10 random images per request
-    const imagePaths = selectedImages.map((_, i) => __dirname + `/cache/help_${i}.jpg`);
-
-    // Download Images
-    let downloaded = 0;
-    selectedImages.forEach((url, index) => {
-      request(url).pipe(fs.createWriteStream(imagePaths[index])).on("close", () => {
-        downloaded++;
-        if (downloaded === selectedImages.length) {
-          api.sendMessage({
-            body: msg,
-            attachment: imagePaths.map(path => fs.createReadStream(path))
-          }, threadID, (error, info) => {
-            imagePaths.forEach(fs.unlinkSync);
-            if (error) console.error("Error sending images:", error);
-            setTimeout(() => api.unsendMessage(info.messageID), 30 * 60 * 1000); // Auto-delete after 30 min
-          });
-        }
+    if (!args[0]) {
+      const categories = {};
+      commands.forEach((cmd, name) => {
+        if (cmd.config.role > role) return;
+        const category = cmd.config.category || "Others";
+        if (!categories[category]) categories[category] = [];
+        categories[category].push(name);
       });
-    });
-  }
+
+      function formatCommands(commandsArray) {
+        const rows = [];
+        for (let i = 0; i < commandsArray.length; i += 3) {
+          rows.push(commandsArray.slice(i, i + 3).join(" ❃ "));
+        }
+        return rows.join("\n| ❃ ");
+      }
+
+      let response = "📜 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗶𝗻 𝗕𝗼𝘁! \n\n";
+      Object.entries(categories).forEach(([category, cmdList]) => {
+        response += `| ${category.toUpperCase()} |\n`;
+        response += `| ❃ ${formatCommands(cmdList)}\n\n`;
+      });
+
+      const totalCommands = commands.size;
+
+      response += `⚒️ 𝗕𝗼𝘁 𝗵𝗮𝘀: ${totalCommands} 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n`;
+      response += `🛸 𝗣𝗿𝗲𝗳𝗶𝘅: ${prefix}\n`;
+      response += `👑 𝗢𝘄𝗻𝗲𝗿: ♡ Nazrul ♡\n\n`;
+      response += `🔍 𝗧𝘆𝗽𝗲 '${prefix}help <cmdName>' 𝘁𝗼 𝘀𝗲𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝗲𝗱 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮 𝘀𝗽𝗲𝗰𝗶𝗳𝗶𝗰 𝗰𝗼𝗺𝗺𝗮𝗻𝗱.`;
+
+      const imageUrl = "https://i.imgur.com/gs8PSXG.jpeg";
+      const imagePath = __dirname + `/cache/commands.jpg`;
+
+      request(imageUrl).pipe(fs.createWriteStream(imagePath)).on("close", async () => {
+        const sentMessage = await api.sendMessage({
+          body: response,
+          attachment: fs.createReadStream(imagePath)
+        }, event.threadID, (error) => {
+          fs.unlinkSync(imagePath);
+          if (error) {
+            console.error("Error sending image:", error);
+          }
+        });
+
+        setTimeout(() => {
+          api.unsendMessage(sentMessage.messageID);
+        }, 40000);
+      });
+
+      return;
+    }
+
+    const configCommand = commands.get(args[0]) || aliases.get(args[0]);
+    if (!configCommand) return message.reply(`⚠️ 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 '${args[0]}' 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱.`);
+
+    const roleText = getRoleName(configCommand.config.role);
+    const author = configCommand.config.author || "Unknown";
+    const description = configCommand.config.longDescription || configCommand.config.shortDescription || "No description available.";
+    const usage = (configCommand.config.guide || "No guide available.")
+      .replace(/{pn}/g, prefix + configCommand.config.name)
+      .replace(/{p}/g, prefix)
+      .replace(/{n}/g, configCommand.config.name);
+
+    let msg = `📜 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 🔖\n\n`;
+    msg += `📜 𝗡𝗮𝗺𝗲: ${configCommand.config.name}\n`;
+    msg += `🛸 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: ${configCommand.config.version}\n`;
+    msg += `🔖 𝗣𝗲𝗿𝗺𝗶𝘀𝘀𝗶𝗼𝗻: ${roleText}\n`;
+    msg += `👑 𝗔𝘂𝘁𝗵𝗼𝗿: ${author}\n`;
+    msg += `💠 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝘆: ${configCommand.config.category}\n`;
+    msg += `🌊 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: ${description}\n`;
+    msg += `🏷️ 𝗚𝘂𝗶𝗱𝗲: ${usage}\n`;
+    msg += `🕰️ 𝗖𝗼𝗼𝗹𝗱𝗼𝘄𝗻𝘀: ${configCommand.config.countDown} seconds\n`;
+    msg += `📜 𝗔𝗹𝗶𝗮𝘀𝗲𝘀: ${configCommand.config.aliases ? configCommand.config.aliases.join(", ") : "None"}\n`;
+
+    const sentMessage = await message.reply(msg);
+
+    setTimeout(() => {
+      message.unsend(sentMessage.messageID);
+    }, 40000);
+  },
 };
 
-function roleTextToString(role) {
+function getRoleName(role) {
   switch (role) {
     case 0:
       return "Everyone";
@@ -126,4 +112,4 @@ function roleTextToString(role) {
     default:
       return "Unknown Role";
   }
-    }
+      }
