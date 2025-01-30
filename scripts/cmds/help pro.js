@@ -7,7 +7,7 @@ module.exports = {
   config: {
     name: "help",
     version: "1.1",
-    author: "Nazrul",
+    author: "【﻿ＰＲＯＴＩＣＫ】",
     countDowns: 10,
     role: 0,
     shortDescription: "Get a list of all commands or command details.",
@@ -40,14 +40,14 @@ module.exports = {
 
       let response = "📜 Available Commands in Bot! \n\n";
       Object.entries(categories).forEach(([category, cmdList]) => {
-        response += `| ${category.toUpperCase()} |\n`;
-        response += `| ❃ ${formatCommands(cmdList)}\n\n`;
+        response += `𓆩  『 ${category.toUpperCase()} 』  𓆪\n`;
+        response += `| ➣ ${formatCommands(cmdList)} ✨\n\n`;
       });
 
       const totalCommands = commands.size;
       response += `⚒️ Bot has: ${totalCommands} Commands\n`;
       response += `🛸 Prefix: ${prefix}\n`;
-      response += `👑 Owner: ♡ Nazrul ♡\n\n`;
+      response += `👑 Owner: 【﻿ＰＲＯＴＩＣＫ】\n\n`;
       response += `Type '${prefix}help <cmdName>' to see detailed information about a specific command.`;
 
       const imageUrl = "https://i.imgur.com/gs8PSXG.jpeg"; // Image link
@@ -62,7 +62,7 @@ module.exports = {
           if (!error) {
             setTimeout(() => {
               api.unsendMessage(info.messageID);
-            }, 40000);
+            }, 1800000);
           }
         });
       });
@@ -99,7 +99,7 @@ module.exports = {
     const sentMessage = await message.reply(msg);
     setTimeout(() => {
       message.unsend(sentMessage.messageID);
-    }, 40000);
+    }, 180000);
   },
 };
 
