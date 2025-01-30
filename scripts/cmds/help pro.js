@@ -3,35 +3,25 @@ const request = require("request");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
 
-const cooldowns = new Map(); // User cooldown tracking
-
 module.exports = {
   config: {
     name: "help",
-    version: "3.3",
+    version: "2.0",
+    author: "Nazrul",
+    countDown: 10,
     role: 0,
-    author: "【﻿ＰＲＯＴＩＣＫ】",
-    category: "system",
-    countDowns: 3,
-    description: "Enhanced Help Command with Anime Girls!",
-    guide: {
-      en: "{p}{n} [page] or {p}{n} <command>",
-    }
+    shortDescription: "Get a list of all commands or command details.",
+    longDescription: "Displays a categorized list of commands or detailed information about a specific command.",
+    category: "general",
+    guide: "{pn} or {pn} <command>",
   },
 
   onStart: async function ({ api, event, args, role }) {
-    const { threadID, messageID, senderID } = event;
+    const { threadID, messageID } = event;
     const prefix = getPrefix(threadID);
 
-    // Cooldown Handling
-    if (cooldowns.has(senderID)) {
-      const timeLeft = ((cooldowns.get(senderID) - Date.now()) / 1000).toFixed(1);
-      if (timeLeft > 0) return api.sendMessage(`⏳ Please wait ${timeLeft}s before using 'help' again!`, threadID, messageID);
-    }
-    cooldowns.set(senderID, Date.now() + 5000); // 5s cooldown
-
-    // If specific command details are requested
-    if (args[0] && isNaN(args[0])) {
+    // Command Details
+    if (args[0] && isNaN(parseInt(args[0]))) {
       const commandName = args[0].toLowerCase();
       const command = commands.get(commandName) || commands.get(aliases.get(commandName));
 
@@ -40,10 +30,11 @@ module.exports = {
       const configCommand = command.config;
       const roleText = roleTextToString(configCommand.role);
       const author = configCommand.author || "Unknown";
-      const description = configCommand.description?.en || "No description available.";
-      const usage = (configCommand.guide?.en || "No guide available.")
-          .replace(/{p}/g, prefix)
-          .replace(/{n}/g, configCommand.name);
+      const description = configCommand.longDescription || configCommand.shortDescription || "No description available.";
+      const usage = (configCommand.guide || "No guide available.")
+        .replace(/{pn}/g, prefix + configCommand.name)
+        .replace(/{p}/g, prefix)
+        .replace(/{n}/g, configCommand.name);
 
       let detailMsg = `📜 **Command Information** 📜\n\n`;
       detailMsg += `🔹 **Name:** ${configCommand.name}\n`;
@@ -53,67 +44,71 @@ module.exports = {
       detailMsg += `🔹 **Category:** ${configCommand.category}\n`;
       detailMsg += `🔹 **Description:** ${description}\n`;
       detailMsg += `🔹 **Usage:** ${usage}\n`;
-      detailMsg += `🔹 **Cooldown:** ${configCommand.countDowns} seconds\n`;
+      detailMsg += `🔹 **Cooldown:** ${configCommand.countDown} seconds\n`;
       detailMsg += `🔹 **Aliases:** ${configCommand.aliases ? configCommand.aliases.join(", ") : "None"}\n`;
 
-      const sentMessage = await api.sendMessage(detailMsg, threadID, messageID);
-      setTimeout(() => api.unsendMessage(sentMessage.messageID), 40000);
-      return;
+      return api.sendMessage(detailMsg, threadID, messageID);
     }
 
-    // Command Listing with 70 Commands Per Page
+    // Command List with Pagination
     const allCommands = [...commands.keys()].filter(cmd => commands.get(cmd).config.role <= role);
     const totalCommands = allCommands.length;
-    const commandsPerPage = 70;
+    const commandsPerPage = 100;
     const totalPages = Math.ceil(totalCommands / commandsPerPage);
     const page = Math.max(1, Math.min(totalPages, parseInt(args[0]) || 1));
 
-    let msg = `🌟 **Bot Command List (Page ${page}/${totalPages})** 🌟\n\n`;
+    let msg = `💫 𝗕𝗼𝘁 𓂃♡ 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𓂃♡ 𝗟𝗶𝘀𝘁 💫\n\n`;
+    msg += `╭────────────────────╮\n`;
+    msg += `│ **Page ${page} / ${totalPages}**\n`;
+    msg += `├────────────────────┤\n`;
+
     const startIdx = (page - 1) * commandsPerPage;
     const endIdx = Math.min(startIdx + commandsPerPage, totalCommands);
 
     for (let i = startIdx; i < endIdx; i++) {
       const cmd = commands.get(allCommands[i]);
-      msg += `✨ **${cmd.config.name}** - ${cmd.config.shortDescription || "No description"}\n`;
+      msg += `│ ✨ **${cmd.config.name}** - ${cmd.config.shortDescription || "No description"}\n`;
     }
 
-    msg += `\n📌 **Use "${prefix}help <command>" for details.**\n`;
+    msg += `╰────────────────────╯\n\n`;
+    msg += `📌 **Use "${prefix}help <command>" for details.**\n`;
     msg += `📌 **Use "${prefix}help [page]" to navigate pages.**\n`;
     msg += `\n🔹 **Total Commands:** ${totalCommands}\n`;
     msg += `🔹 **Prefix:** ${prefix}\n`;
-    msg += `🔹 **Owner:** 【﻿ＰＲＯＴＩＣＫ】\n`;
+    msg += `🔹 **Owner:** ♡ Nazrul ♡\n`;
 
-    // Interactive Buttons (If your bot supports buttons)
-    const buttons = [
-      { label: "⬅️ Previous", command: `${prefix}help ${Math.max(1, page - 1)}` },
-      { label: "➡️ Next", command: `${prefix}help ${Math.min(totalPages, page + 1)}` }
-    ];
-
-    // Random Anime Girl Image Selection
+    // 100 Anime Girl Images
     const animeImages = [
-      "https://i.imgur.com/a1N0bVJ.jpg",
-      "https://i.imgur.com/xGfjK9U.jpg",
-      "https://i.imgur.com/VKzHPnQ.jpg",
-      "https://i.imgur.com/PyJQ9Ys.jpg",
-      "https://i.imgur.com/Uc8hQX5.jpg",
-      "https://i.imgur.com/Nu1yPZi.jpg",
-      "https://i.imgur.com/YIjx6bb.jpg",
-      "https://i.imgur.com/Qz8Ee2e.jpg",
-      "https://i.imgur.com/9ZPVOVl.jpg",
-      "https://i.imgur.com/R5TBzA4.jpg"
+      "https://i.imgur.com/gs8PSXG.jpeg",
+      "https://i.imgur.com/a1b2C3D.jpg",
+      "https://i.imgur.com/XyZ4a5B.jpg",
+      "https://i.imgur.com/BcD6eFg.jpg",
+      "https://i.imgur.com/LMN78OP.jpg",
+      "https://i.imgur.com/qRStUV1.jpg",
+      "https://i.imgur.com/vWXYza2.jpg",
+      "https://i.imgur.com/ABC3dEF.jpg",
+      "https://i.imgur.com/GHIJ4KL.jpg",
+      "https://i.imgur.com/MNO5PQR.jpg",
+      // ... Add up to 100 image links
     ];
-    const randomImage = animeImages[Math.floor(Math.random() * animeImages.length)];
-    const imagePath = __dirname + `/cache/help.jpg`;
+    
+    const selectedImages = animeImages.sort(() => 0.5 - Math.random()).slice(0, 10); // Pick 10 random images per request
+    const imagePaths = selectedImages.map((_, i) => __dirname + `/cache/help_${i}.jpg`);
 
-    request(randomImage).pipe(fs.createWriteStream(imagePath)).on("close", () => {
-      api.sendMessage({
-        body: msg,
-        attachment: fs.createReadStream(imagePath),
-        buttons: buttons.map(b => ({ type: "postback", title: b.label, payload: b.command }))
-      }, threadID, (error, info) => {
-        fs.unlinkSync(imagePath);
-        if (!error) {
-          setTimeout(() => api.unsendMessage(info.messageID), 60000);
+    // Download Images
+    let downloaded = 0;
+    selectedImages.forEach((url, index) => {
+      request(url).pipe(fs.createWriteStream(imagePaths[index])).on("close", () => {
+        downloaded++;
+        if (downloaded === selectedImages.length) {
+          api.sendMessage({
+            body: msg,
+            attachment: imagePaths.map(path => fs.createReadStream(path))
+          }, threadID, (error, info) => {
+            imagePaths.forEach(fs.unlinkSync);
+            if (error) console.error("Error sending images:", error);
+            setTimeout(() => api.unsendMessage(info.messageID), 30 * 60 * 1000); // Auto-delete after 30 min
+          });
         }
       });
     });
@@ -131,4 +126,4 @@ function roleTextToString(role) {
     default:
       return "Unknown Role";
   }
-        }
+    }
