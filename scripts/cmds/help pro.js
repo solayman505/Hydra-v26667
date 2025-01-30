@@ -51,7 +51,7 @@ module.exports = {
 
       setTimeout(() => {
         message.unsend(sentMessage.messageID);
-      }, 40000);
+      }, 400000000);
 
       return;
     }
