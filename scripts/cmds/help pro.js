@@ -1,4 +1,3 @@
-
 const fs = require("fs-extra");
 const request = require("request");
 const { getPrefix } = global.utils;
@@ -27,29 +26,28 @@ module.exports = {
 
     if (args[0] && isNaN(parseInt(args[0]))) {
       if (!command) {
-        return api.sendMessage(`Command "${commandName}" not found.`, threadID, messageID);
+        return api.sendMessage(`⚠️ Command "${commandName}" not found.`, threadID, messageID);
       }
 
       const configCommand = command.config;
       const roleText = roleTextToString(configCommand.role);
       const author = configCommand.author || "Unknown";
-      const Description = configCommand.description?.en || "No description available.";
-      const shortDescription = configCommand.shortDescription?.en || "No description available.";
+      const description = configCommand.Description || "No description available.";
+      const shortDescription = configCommand.shortDescription || "No description available.";
       const usage = (configCommand.guide?.en || "No guide available.")
           .replace(/{p}/g, prefix)
           .replace(/{n}/g, configCommand.name);
 
-      let msg = `✨ Command Information ✨\n`;
-      msg += `• Name: ${configCommand.name}\n`;
-      msg += `• Version: ${configCommand.version}\n`;
-      msg += `• Role Required: ${roleText}\n`;
-      msg += `• Author: ${author}\n`;
-      msg += `• Category: ${configCommand.category}\n`;
-      msg += `• Description: ${configCommand.Description}\n`;
-      msg += `• shortDescription: ${configCommand.shortDescription}\n`;
-      msg += `• Guide: ${usage}\n`;
-      msg += `• Cooldown Time: ${configCommand.countDown} seconds\n`;
-      msg += `• Aliases: ${configCommand.aliases ? configCommand.aliases.join(", ") : "None"}\n`;
+      let msg = "📜 Command information 🔖\n\n";
+      msg += `📜 Name: ${configCommand.name}\n`;
+      msg += `🛸 Version: ${configCommand.version}\n`;
+      msg += `🔖 Permission: ${roleText}\n`;
+      msg += `👑 Author: ${author}\n`;
+      msg += `💠 Category: ${configCommand.category}\n`;
+      msg += `🌊 Description: ${description}\n`;
+      msg += `🏷️ Guide: ${usage}\n`;
+      msg += `🕰️ Cooldowns: ${configCommand.countDown} seconds\n`;
+      msg += `📜 Aliases: ${configCommand.aliases ? configCommand.aliases.join(", ") : "None"}\n`;
 
       return api.sendMessage(msg, threadID, messageID);
     }
@@ -72,24 +70,20 @@ module.exports = {
     const startIndex = (page - 1) * numberOfOnePage;
     const endIndex = Math.min(startIndex + numberOfOnePage, totalCommands);
 
-    let msg = "💫 𝗕𝗼𝘁 𓂃♡ 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𓂃♡ 𝗟𝗶𝘀𝘁 💫\n\n";
-    msg += "╭───────────────────────────────────────╮\n";
-    msg += `│ 𝗣𝗮𝗴𝗲 ${page} / 3\n`;
-    msg += "├───────────────╮\n";
+    let msg = "📜 Available Commands in Bot! \n\n";
+    msg += `📜 Page ${page} / 3\n\n`;
 
     for (let i = startIndex; i < endIndex; i++) {
-      msg += `│ • ✨${allCommands[i]}✨\n`; // Listing commands
+      msg += `• ${allCommands[i]}\n`; // Listing commands
     }
 
-    msg += "╰───────────────────────────────────────╯\n\n";
-    msg += `🔰 Total Command of this Bot ✨: ${totalCommands}\n`;
-    msg += `🤍 Owner: 【﻿ＰＲＯＴＩＣＫ】\n`;
-    msg += `🌸 Bot Name: ${global.GoatBot.config.nickNameBot}\n`;
-    msg += `💙 Bot Prefix: ${prefix}\n`;
+    msg += `\nTotal Commands: ${totalCommands}\n`;
+    msg += `Prefix: ${prefix}\n`;
+    msg += `Owner: 【﻿ＰＲＯＴＩＣＫ】\n`;
+    msg += `Type "${prefix}help <command>" to get more details about a command.\n`;
 
     const link = "https://m.facebook.com/protick.mrc/";
-    msg += `\n📌💫 Use "${prefix}joingc" to join my group.\n`;
-    msg += `📌💫 Or click here to join directly: ${link}\n`;
+    msg += `\nJoin my group: ${link}\n`;
 
     const imageUrl = "https://i.imgur.com/gs8PSXG.jpeg";
     const imagePath = __dirname + `/cache/commands.jpg`;
@@ -121,4 +115,4 @@ function roleTextToString(role) {
     default:
       return "Unknown Permission";
   }
-}
+  }
