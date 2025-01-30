@@ -7,7 +7,7 @@ module.exports = {
   config: {
     name: "help",
     version: "1.0",
-    author: "Nazrul",
+    author: "protick",
     countDown: 10,
     role: 0,
     shortDescription: "✨ Get a list of all commands or command details ✨",
@@ -46,7 +46,7 @@ module.exports = {
 
       response += `⚒️ 𝗕𝗼𝘁 𝗵𝗮𝘀: ${totalCommands} 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n`;
       response += `🛸 𝗣𝗿𝗲𝗳𝗶𝘅: ${prefix}\n`;
-      response += `👑 𝗢𝘄𝗻𝗲𝗿: ♡ Nazrul ♡\n\n`;
+      response += `👑 𝗢𝘄𝗻𝗲𝗿: ♡ Protick ♡\n\n`;
       response += `🔍 𝗧𝘆𝗽𝗲 '${prefix}help <cmdName>' 𝘁𝗼 𝘀𝗲𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝗲𝗱 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮 𝘀𝗽𝗲𝗰𝗶𝗳𝗶𝗰 𝗰𝗼𝗺𝗺𝗮𝗻𝗱.`;
 
       const imageUrl = "https://i.imgur.com/gs8PSXG.jpeg";
