@@ -8,7 +8,7 @@ const cooldowns = new Map(); // User cooldown tracking
 module.exports = {
   config: {
     name: "help",
-    version: "3.2",
+    version: "3.3",
     role: 0,
     author: "【﻿ＰＲＯＴＩＣＫ】",
     category: "system",
@@ -30,9 +30,6 @@ module.exports = {
     }
     cooldowns.set(senderID, Date.now() + 5000); // 5s cooldown
 
-    // Animated Effect (Mimics Typing)
-    await api.sendMessage("⌛ Processing request... Please wait.", threadID, messageID);
-    
     // If specific command details are requested
     if (args[0] && isNaN(args[0])) {
       const commandName = args[0].toLowerCase();
@@ -134,4 +131,4 @@ function roleTextToString(role) {
     default:
       return "Unknown Role";
   }
-      }
+        }
