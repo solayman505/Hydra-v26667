@@ -1,12 +1,12 @@
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const request = require("request");
 const fs = require("fs-extra");
+const request = require("request");
 
 module.exports = {
   config: {
     name: "help",
-    version: "1.1",
+    version: "1.2",
     author: "【ＰＲＯＴＩＣＫ】",
     countDown: 10,
     role: 0,
@@ -18,14 +18,14 @@ module.exports = {
 
   onStart: async function ({ message, args, event, role }) {
     const prefix = getPrefix(event.threadID);
-    
+
     // Image Links (Random Selection)
     const imageLinks = [
+      "https://i.imgur.com/gs8PSXG.jpeg",
       "https://i.imgur.com/abc123.jpg",
       "https://i.imgur.com/def456.jpg",
       "https://i.imgur.com/ghi789.jpg",
-      "https://i.imgur.com/jkl012.jpg",
-      "https://i.imgur.com/mno345.jpg"
+      "https://i.imgur.com/jkl012.jpg"
     ];
     
     const randomImage = imageLinks[Math.floor(Math.random() * imageLinks.length)];
@@ -48,20 +48,11 @@ module.exports = {
         return rows.join("\n| ❃ ");
       }
 
-      // Pagination Logic (4 Pages)
-      const allCommands = Object.entries(categories);
-      const totalPages = 4;
-      const page = Math.max(1, Math.min(totalPages, parseInt(args[0]) || 1));
-      const commandsPerPage = Math.ceil(allCommands.length / totalPages);
-      const start = (page - 1) * commandsPerPage;
-      const end = Math.min(start + commandsPerPage, allCommands.length);
-
-      let response = `📜 Available Commands - Page ${page}/${totalPages} 📜\n\n`;
-      for (let i = start; i < end; i++) {
-        const [category, cmdList] = allCommands[i];
+      let response = "📜 Available Commands in Bot! \n\n";
+      Object.entries(categories).forEach(([category, cmdList]) => {
         response += `| ${category.toUpperCase()} |\n`;
         response += `| ❃ ${formatCommands(cmdList)}\n\n`;
-      }
+      });
 
       response += `⚒️ Bot has: ${commands.size} Commands\n`;
       response += `🛸 Prefix: ${prefix}\n`;
@@ -77,7 +68,7 @@ module.exports = {
         setTimeout(() => {
           message.unsend(sentMessage.messageID);
           fs.unlinkSync(imagePath);
-        }, 1200000); // 20 minutes auto-delete
+        }, 40000);
       });
 
       return;
@@ -114,7 +105,7 @@ module.exports = {
       setTimeout(() => {
         message.unsend(sentMessage.messageID);
         fs.unlinkSync(imagePath);
-      }, 1200000); // 20 minutes auto-delete
+      }, 40000);
     });
   },
 };
@@ -130,4 +121,4 @@ function getRoleName(role) {
     default:
       return "Unknown Role";
   }
-      }
+}
