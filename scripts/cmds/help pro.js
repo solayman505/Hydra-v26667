@@ -1,3 +1,4 @@
+
 const fs = require("fs-extra");
 const request = require("request");
 const { getPrefix } = global.utils;
@@ -86,9 +87,9 @@ module.exports = {
     msg += `🌸 Bot Name: ${global.GoatBot.config.nickNameBot}\n`;
     msg += `💙 Bot Prefix: ${prefix}\n`;
 
-    const link = 'https://m.facebook.com/protick.mrc/';
-    msg += `\n📌💫 Use "${prefix}joingc" message me for any quarry .\n`;
-    msg += `📌💫 Or click here to contract directly: ${link}\n`;
+    const link = "https://m.facebook.com/protick.mrc/";
+    msg += `\n📌💫 Use "${prefix}joingc" to join my group.\n`;
+    msg += `📌💫 Or click here to join directly: ${link}\n`;
 
     const imageUrl = "https://imgur.com/gallery/oo-fgU9jNp";
     const imagePath = __dirname + `/cache/commands.jpg`;
@@ -120,4 +121,4 @@ function roleTextToString(role) {
     default:
       return "Unknown Permission";
   }
-                                  }
+        }
