@@ -1,14 +1,14 @@
-const fs = require("fs-extra");
-const request = require("request");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
+const request = require("request");
+const fs = require("fs-extra");
 
 module.exports = {
   config: {
     name: "help",
-    version: "1.0",
-    author: "【﻿ＰＲＯＴＩＣＫ】", // Updated author
-    countDown: 3, // Updated countDown
+    version: "1.1",
+    author: "【ＰＲＯＴＩＣＫ】",
+    countDown: 10,
     role: 0,
     shortDescription: "Get a list of all commands or command details.",
     longDescription: "Displays a categorized list of commands or detailed information about a specific command.",
@@ -18,6 +18,18 @@ module.exports = {
 
   onStart: async function ({ message, args, event, role }) {
     const prefix = getPrefix(event.threadID);
+    
+    // Image Links (Random Selection)
+    const imageLinks = [
+      "https://i.imgur.com/abc123.jpg",
+      "https://i.imgur.com/def456.jpg",
+      "https://i.imgur.com/ghi789.jpg",
+      "https://i.imgur.com/jkl012.jpg",
+      "https://i.imgur.com/mno345.jpg"
+    ];
+    
+    const randomImage = imageLinks[Math.floor(Math.random() * imageLinks.length)];
+    const imagePath = __dirname + `/cache/help.jpg`;
 
     if (!args[0]) {
       const categories = {};
@@ -36,39 +48,36 @@ module.exports = {
         return rows.join("\n| ❃ ");
       }
 
-      let response = "💫 𝗕𝗼𝘁 𓂃♡ 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𓂃♡ 𝗟𝗶𝘀𝘁 💫\n\n";
-      response += "╭───────────────────────────────────────╮\n";
-      Object.entries(categories).forEach(([category, cmdList]) => {
-        response += `│ ${category.toUpperCase()}\n`;
-        response += `├───────────────╮\n`;
-        response += `│ ❃ ${formatCommands(cmdList)}\n`;
-        response += "╰───────────────────────────────────────╯\n\n";
-      });
+      // Pagination Logic (4 Pages)
+      const allCommands = Object.entries(categories);
+      const totalPages = 4;
+      const page = Math.max(1, Math.min(totalPages, parseInt(args[0]) || 1));
+      const commandsPerPage = Math.ceil(allCommands.length / totalPages);
+      const start = (page - 1) * commandsPerPage;
+      const end = Math.min(start + commandsPerPage, allCommands.length);
 
-      const totalCommands = commands.size;
+      let response = `📜 Available Commands - Page ${page}/${totalPages} 📜\n\n`;
+      for (let i = start; i < end; i++) {
+        const [category, cmdList] = allCommands[i];
+        response += `| ${category.toUpperCase()} |\n`;
+        response += `| ❃ ${formatCommands(cmdList)}\n\n`;
+      }
 
-      response += `🔰 Total Command of this Bot ✨: ${totalCommands}\n`;
-      response += `🤍 Owner: 【﻿ＰＲＯＴＩＣＫ】\n`;
-      response += `🌸 Bot Name: ${global.GoatBot.config.nickNameBot}\n`;
-      response += `💙 Bot Prefix: ${prefix}\n`;
+      response += `⚒️ Bot has: ${commands.size} Commands\n`;
+      response += `🛸 Prefix: ${prefix}\n`;
+      response += `👑 Owner: 【ＰＲＯＴＩＣＫ】\n\n`;
+      response += `Type '${prefix}help <cmdName>' to see detailed information about a specific command.`;
 
-      const link = "https://m.facebook.com/protick.mrc/";
-      response += `\n📌💫 Use "${prefix}joingc" to join my group.\n`;
-      response += `📌💫 Or click here to join directly: ${link}\n`;
-
-      const imageUrl = "https://i.imgur.com/gs8PSXG.jpeg"; // Random image from cd1
-      const imagePath = __dirname + `/cache/commands.jpg`;
-
-      request(imageUrl).pipe(fs.createWriteStream(imagePath)).on("close", () => {
-        message.reply({
+      request(randomImage).pipe(fs.createWriteStream(imagePath)).on("close", async () => {
+        const sentMessage = await message.reply({
           body: response,
-          attachment: fs.createReadStream(imagePath)
-        }, (error) => {
-          fs.unlinkSync(imagePath);
-          if (error) {
-            console.error("Error sending image:", error);
-          }
+          attachment: fs.createReadStream(imagePath),
         });
+
+        setTimeout(() => {
+          message.unsend(sentMessage.messageID);
+          fs.unlinkSync(imagePath);
+        }, 1200000); // 20 minutes auto-delete
       });
 
       return;
@@ -85,7 +94,7 @@ module.exports = {
       .replace(/{p}/g, prefix)
       .replace(/{n}/g, configCommand.config.name);
 
-    let msg = `✨ Command Information ✨\n\n`;
+    let msg = `📜 Command Information 🔖\n\n`;
     msg += `📜 Name: ${configCommand.config.name}\n`;
     msg += `🛸 Version: ${configCommand.config.version}\n`;
     msg += `🔖 Permission: ${roleText}\n`;
@@ -96,11 +105,17 @@ module.exports = {
     msg += `🕰️ Cooldowns: ${configCommand.config.countDown} seconds\n`;
     msg += `📜 Aliases: ${configCommand.config.aliases ? configCommand.config.aliases.join(", ") : "None"}\n`;
 
-    const sentMessage = await message.reply(msg);
+    request(randomImage).pipe(fs.createWriteStream(imagePath)).on("close", async () => {
+      const sentMessage = await message.reply({
+        body: msg,
+        attachment: fs.createReadStream(imagePath),
+      });
 
-    setTimeout(() => {
-      message.unsend(sentMessage.messageID);
-    }, 40000);
+      setTimeout(() => {
+        message.unsend(sentMessage.messageID);
+        fs.unlinkSync(imagePath);
+      }, 1200000); // 20 minutes auto-delete
+    });
   },
 };
 
@@ -115,4 +130,4 @@ function getRoleName(role) {
     default:
       return "Unknown Role";
   }
-                    }
+      }
