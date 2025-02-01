@@ -1,4 +1,3 @@
-
 const fs = require("fs-extra");
 const request = require("request");
 const { getPrefix } = global.utils;
