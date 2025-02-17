@@ -1,53 +1,43 @@
-module.exports = {
-  config: {
-    name: "4k",
-    version: "0.0.1",
-    author: "DC-Nam",
-    description: {
-      en: "Increase image quality to 4K",
-    },
-    commandCategory: {
-      en: "Images",
-    },
-    usage: "[image]",
-    cooldowns: 3,
-  },
+const axios = require("axios");
 
-  langs: {
-    en: {
-      replyPhoto: "Please reply with 1 photo!",
-      increaseResolution: "Increasing the resolution for {count} image(s) ({time}s)",
-      successful: "Successful ({time}s)",
-    },
-  },
+const baseApiUrl = async () => {
+  const base = await axios.get(
+    `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`
+  );
+  return base.data.mostakim;
+};
+module.exports.config = {
+  name: "4k",
+  aliases: ["4k", "remini"],
+  category: "enhanced",
+  author: "Romim"
+};
 
-  onStart: async function ({ api, event, getLang }) {
-    let send = (msg) => api.sendMessage(msg, event.threadID, event.messageID);
+module.exports.onStart = async ({ api, event, args }) => {
+  try {
 
-    if (event.type != "message_reply") return send(getLang("replyPhoto"));
-
-    send(getLang("increaseResolution", { count: event.messageReply.attachments.length, time: event.messageReply.attachments.length * 3 }));
-
-    let stream = [];
-    let exec_time = 0;
-
-    for (let i of event.messageReply.attachments) {
-      try {
-        let res = await require("axios").get(encodeURI(`https://nams.live/upscale.png?{"image":"${i.url}","model":"4x-UltraSharp"}`), {
-          responseType: "stream",
-        });
-
-        exec_time += +res.headers.exec_time;
-        const eta = (res.headers.exec_time / 1000) << 0;
-
-        res.data.path = "tmp.png";
-        stream.push(res.data);
-      } catch (e) {}
+    if (!event.messageReply || !event.messageReply.attachments || !event.messageReply.attachments[0]) {
+      return api.sendMessage("𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐩𝐥𝐲 𝐭𝐨 𝐚𝐧 𝐢𝐦𝐚𝐠𝐞 𝐰𝐢𝐭𝐡 𝐭𝐡𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.", event.threadID, event.messageID);
     }
 
-    send({
-      body: getLang("successful", { time: (exec_time / 1000) << 0 }),
-      attachment: stream,
+
+    const Romim = event.messageReply?.attachments[0]?.url;
+
+
+    const apiUrl = (`${await baseApiUrl()}/remini?input=${encodeURIComponent(Romim)}`);
+ 
+
+    const imageStream = await axios.get(apiUrl,{
+      responseType: 'stream'
     });
-  },
+
+
+    api.sendMessage({
+      body: "𝐇𝐞𝐫𝐞 𝐢𝐬 𝐲𝐨𝐮𝐫 𝐞𝐧𝐡𝐚𝐧𝐜𝐞𝐝 𝐩𝐡𝐨𝐭𝐨",
+      attachment: imageStream.data
+    }, event.threadID, event.messageID);
+
+  } catch (e) {
+    api.sendMessage(`Error: ${e.message}`, event.threadID, event.messageID);
+  }
 };
