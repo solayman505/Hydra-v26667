@@ -108,7 +108,7 @@ module.exports = {
           else if (value.config.shortDescription)
             shortDescription = checkLangObject(value.config.shortDescription, langCode);
           if (shortDescription)
-            describe += `:\n ❐${cropContent(shortDescription.charAt(0).toUpperCase() + shortDescription.slice(1))}`;
+            describe += `:\n ❐ ${cropContent(shortDescription.charAt(0).toUpperCase() + shortDescription.slice(1))}`;
           arrayInfo.push({
             data: describe,
             priority: value.priority || 0
@@ -123,7 +123,7 @@ module.exports = {
 
         const returnArray = allPage[page - 1] || [];
         const startNumber = (page - 1) * numberOfOnePage + 1;
-        msg += (returnArray || []).reduce((text, item, index) => text += ` ✨ ${item.data} ✨\n`, '').slice(0, -1);
+        msg += (returnArray || []).reduce((text, item, index) => text += ` ❄️${item.data}\n`, '').slice(0, -1);
         await message.reply(getLang("help", msg, page, totalPage, commands.size, prefix, doNotDelete));
       }
       else if (sortHelp == "category") {
@@ -274,4 +274,4 @@ function cropContent(content, max) {
     content = content + "...";
   }
   return content;
-      }
+        }
