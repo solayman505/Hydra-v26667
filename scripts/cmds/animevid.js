@@ -22,7 +22,7 @@ module.exports = {
       const time = Date.now();
       fs.writeFileSync(`${time}_anime.mp4`, buffer.data);
       message.reply({
-        body: `➤𝗥𝗔𝗡𝗗𝗢𝗠 𝗩-𝗔! 🎉`,
+        body: `Random anime video generated! 🎉`,
         attachment: fs.createReadStream(`${time}_anime.mp4`)
       }, () => fs.unlinkSync(`${time}_anime.mp4`));
     } catch (error) {

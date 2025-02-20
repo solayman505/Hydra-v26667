@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: 'animeme',
     aliases: ['anime-meme'],
-    author: 'Haru',
+    author: 'Xemon',
     version: '1.0.0',
     role: 0,
     countdown: 5,
