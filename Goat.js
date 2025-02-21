@@ -1,22 +1,3 @@
-/**
- * @author NTKhang
- * ! The source code is written by NTKhang, please don't change the author's name everywhere. Thank you for using
- * ! Official source code: https://github.com/ntkhang03/Goat-Bot-V2
- * ! If you do not download the source code from the above address, you are using an unknown version and at risk of having your account hacked
- *
- * English:
- * ! Please do not change the below code, it is very important for the project.
- * It is my motivation to maintain and develop the project for free.
- * ! If you change it, you will be banned forever
- * Thank you for using
- *
- * Vietnamese:
- * ! Vui lòng không thay đổi mã bên dưới, nó rất quan trọng đối với dự án.
- * Nó là động lực để tôi duy trì và phát triển dự án miễn phí.
- * ! Nếu thay đổi nó, bạn sẽ bị cấm vĩnh viễn
- * Cảm ơn bạn đã sử dụng
- */
-
 process.on('unhandledRejection', error => console.log(error));
 process.on('uncaughtException', error => console.log(error));
 
@@ -66,6 +47,15 @@ if (config.whiteListMode?.whiteListIds && Array.isArray(config.whiteListMode.whi
 const configCommands = require(dirConfigCommands);
 
 global.GoatBot = {
+ 	commands: new Map(),
+    	events: new Map(),
+   	cooldowns: new Map(),
+   	eventRegistered: new Array(),
+    	handleSchedule: new Array(),
+    	handleReaction: new Array(),
+    	handleReply: new Array(),
+    	mainPath: process.cwd(),
+    	configPath: new String()
 	startTime: Date.now() - process.uptime() * 1000, // time start bot (ms)
 	commands: new Map(), // store all commands
 	eventCommands: new Map(), // store all event commands
@@ -93,6 +83,16 @@ global.GoatBot = {
 };
 
 global.db = {
+    	threadInfo: new Map(),
+    	threadData: new Map(),
+    	userName: new Map(),
+    	userBanned: new Map(),
+    	threadBanned: new Map(),
+    	commandBanned: new Map(),
+    	threadAllowNSFW: new Array(),
+   	allUserID: new Array(),
+   	allCurrenciesID: new Array(),
+    	allThreadID: new Array()
 	// all data
 	allThreadData: [],
 	allUserData: [],
