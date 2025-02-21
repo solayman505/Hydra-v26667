@@ -114,36 +114,43 @@ if (config.autoRestart) {
   }
 }
 
-// Set up email transporter using OAuth2
-const { gmailAccount } = config.credentials;
-const { email, clientId, clientSecret, refreshToken } = gmailAccount;
-const OAuth2 = google.auth.OAuth2;
-const OAuth2_client = new OAuth2(clientId, clientSecret);
-OAuth2_client.setCredentials({ refresh_token: refreshToken });
-let accessToken;
-try {
-  accessToken = await OAuth2_client.getAccessToken();
-}
-catch (err) {
-  throw new Error("Google API Token Expired");
-}
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  service: 'Gmail',
-  auth: {
-    type: 'OAuth2',
-    user: email,
-    clientId,
-    clientSecret,
-    refreshToken,
-    accessToken
+// Function to set up email transporter using OAuth2
+async function setupEmailTransporter() {
+  const { gmailAccount } = config.credentials;
+  const { email, clientId, clientSecret, refreshToken } = gmailAccount;
+  const OAuth2 = google.auth.OAuth2;
+  const OAuth2_client = new OAuth2(clientId, clientSecret);
+  OAuth2_client.setCredentials({ refresh_token: refreshToken });
+  let accessToken;
+  try {
+    accessToken = await OAuth2_client.getAccessToken();
   }
-});
+  catch (err) {
+    throw new Error("Google API Token Expired");
+  }
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    service: 'Gmail',
+    auth: {
+      type: 'OAuth2',
+      user: email,
+      clientId,
+      clientSecret,
+      refreshToken,
+      accessToken
+    }
+  });
+
+  global.utils = {
+    sendMail,
+    transporter
+  };
+}
 
 // Utility function to send mail
 async function sendMail({ to, subject, text, html, attachments }) {
   const mailOptions = {
-    from: email,
+    from: config.credentials.gmailAccount.email,
     to,
     subject,
     text,
@@ -154,10 +161,12 @@ async function sendMail({ to, subject, text, html, attachments }) {
   return info;
 }
 
-global.utils = {
-  sendMail,
-  transporter
-};
+// Execute setupEmailTransporter async function
+setupEmailTransporter().then(() => {
+  console.log("✅ Email transporter setup successfully.");
+}).catch(err => {
+  console.log("❌ Email transporter setup failed: ", err.message);
+});
 
 // Watch and reload config files when modified
 const watchAndReloadConfig = (dir, type, prop, logName) => {
@@ -186,4 +195,4 @@ const watchAndReloadConfig = (dir, type, prop, logName) => {
 watchAndReloadConfig(dirConfigCommands, 'change', 'configCommands', 'CONFIG COMMANDS');
 watchAndReloadConfig(dirConfig, 'change', 'config', 'CONFIG');
 
-console.log("🚀 Hydra is now running!");
+console.log("🚀 GoatBot is now running!");
