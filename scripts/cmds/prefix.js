@@ -1,89 +1,35 @@
-const fs = require("fs-extra");
+/cmd install module.exports = {
+	config: {
+		name: "prefix",
+		version: "1.0",
+		author: "Tokodori_Frtiz", // Remodified by Cliff
+		countDown: 5,
+		role: 0,
+		shortDescription: "no prefix",
+		longDescription: "no prefix",
+		category: "auto 🪐",
+	},
 
-module.exports = {
-  config: {
-    name: "Hydra",
-    version: "1.3",
-    author: "NTKhang",
-    countDown: 5,
-    role: 0,
-    shortDescription: "Change the prefix of the bot",
-    longDescription: "Change the bot command mark in your chat box or the whole bot system (only admin bot)",
-    category: "config",
-    guide: {
-      en: "   {pn} <new prefix>: change new prefix in your chat box"
-        + "\n   Example:"
-        + "\n    {pn} "
-        + "\n\n   {pn} <new prefix> -g: change new prefix in system bot (only admin bot)"
-        + "\n   Example:"
-        + "\n    {pn} -g"
-        + "\n\n   {pn} reset: change prefix in your box chat to default"
-    }
-  },
+	onStart: async function () {},
 
-  langs: {
-    en: {
-      reset: "Hydra prefix has been reset to default: %1",
-      onlyAdmin: "Sorry, only admin can change the prefix of the Hydra bot system.",
-      confirmGlobal: "React to this message to confirm changing Hydra's global prefix.",
-      confirmThisThread: "React to this message to confirm changing Hydra's prefix in your chat box.",
-      successGlobal: "Changed the prefix of Hydra's global system to: %1",
-      successThisThread: "Changed Hydra's prefix in your chat box to: %1",
-      myPrefix: "Hello, my name is Hydra (⁠ ⁠◜⁠‿⁠◝⁠ ⁠)⁠♡\nHere's my prefix:\n🌸Hydra prefix system: %1\n🌸Hydra prefix in your box: %2"
-    }
-  },
+	onChat: async function ({ event, message, api }) {
+		if (event.body && event.body.toLowerCase() === "prefix") {
+			// Bot Owner Information
+			const ownerName = "Xrotick"; // Owner's name
+			const ownerUID = "100057041031881"; // Owner's Facebook ID (replace with actual)
 
-  onStart: async function ({ message, role, args, commandName, event, threadsData, getLang }) {
-    if (!args[0])
-      return message.SyntaxError();
-
-    if (args[0] === 'reset') {
-      await threadsData.set(event.threadID, null, "data.prefix");
-      return message.reply(getLang("reset", global.GoatBot.config.prefix));
-    }
-
-    const newPrefix = args[0];
-    const formSet = {
-      commandName,
-      author: event.senderID,
-      newPrefix
-    };
-
-    if (args[1] === "-g") {
-      if (role < 2)
-        return message.reply(getLang("onlyAdmin"));
-      else
-        formSet.setGlobal = true;
-    } else {
-      formSet.setGlobal = false;
-    }
-
-    return message.reply(args[1] === "-g" ? getLang("confirmGlobal") : getLang("confirmThisThread"), (err, info) => {
-      formSet.messageID = info.messageID;
-      global.GoatBot.onReaction.set(info.messageID, formSet);
-    });
-  },
-
-  onReaction: async function ({ message, threadsData, event, Reaction, getLang }) {
-    const { author, newPrefix, setGlobal } = Reaction;
-    if (event.userID !== author)
-      return;
-    if (setGlobal) {
-      global.GoatBot.config.prefix = newPrefix;
-      fs.writeFileSync(global.client.dirConfig, JSON.stringify(global.GoatBot.config, null, 2));
-      return message.reply(getLang("successGlobal", newPrefix));
-    } else {
-      await threadsData.set(event.threadID, newPrefix, "data.prefix");
-      return message.reply(getLang("successThisThread", newPrefix));
-    }
-  },
-
-  onChat: async function ({ event, message, getLang }) {
-    if (event.body && event.body.toLowerCase() === "prefix") {
-      return () => {
-        return message.reply(getLang("myPrefix", global.GoatBot.config.prefix, utils.getPrefix(event.threadID)));
-      };
-    }
-  }
+			// Send message with contact sharing in one response
+			await api.shareContact(
+				`Yo, my prefix is [ 𓆩 / 𓆪 ]\n
+𝗦𝗢𝗠𝗘 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗧𝗛𝗔𝗧 𝗠𝗔𝗬 𝗛𝗘𝗟𝗣 𝗬𝗢𝗨:
+➥ /help [number of page] -> see commands
+➥ /help [command] -> information and usage of command\n
+𝗕𝗼𝘁 𝗢𝘄𝗻𝗲𝗿: ${ownerName}\n𝗜𝗗: ${ownerUID}\n
+Have fun using it, enjoy! ❤️`,
+				ownerUID,
+				event.threadID,
+				await global.utils.getStreamFromURL("https://i.imgur.com/M4luPbE.gif") // Attachment
+			);
+		}
+	}
 };
-	      
