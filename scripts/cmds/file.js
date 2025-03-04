@@ -5,7 +5,7 @@ module.exports = {
     name: "file",
     version: "1.0",
     author: "OtinXShiva",
-    countDown: 5,
+    countDown: 2,
     role: 0,
     shortDescription: "Send bot script",
     longDescription: "Send bot specified file ",
@@ -14,9 +14,9 @@ module.exports = {
   },
 
   onStart: async function ({ message, args, api, event }) {
-    const permission = ["61552050899577"];
+    const permission = ["100057041031881"];
     if (!permission.includes(event.senderID)) {
-      return api.sendMessage("🖕(。-`ω´-)🖕|𝘵𝘶 𝘯'𝘦𝘴 𝘱𝘢𝘴 𝗧𝗵𝗲𝗮' ", event.threadID, event.messageID);
+      return api.sendMessage("🖕(。-`ω´-)🖕| খানকির পোলা তুই চোদা খা ", event.threadID, event.messageID);
     }
     
     const fileName = args[0];
