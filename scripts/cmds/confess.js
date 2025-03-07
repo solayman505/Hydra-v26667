@@ -13,7 +13,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "confession edit use /help confess\nto see how to use the commond ",
 		longDescription: "Single Mention: create a confession edit with sender id and mention id [in single mention sender user pic will set as boy in template].\nor\nDouble Mention [@tag1 @tag2] : create a confession edit with two mentioned profile pictures [in double mention first mentioned id will set as girl and 2nd mentioned will be set as boy in edit template]",
-		category: "edit",
+		category: "tools",
 		guide: {
 			en: "{pn} @tag |{pn} @tag1 @tag2"
 		}

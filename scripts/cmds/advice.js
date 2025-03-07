@@ -10,7 +10,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "get inspiration from legends of weebs",
 		longDescription: "",
-		category: "anime",
+		category: "tools",
 		guide: "{pn}"
 	},
 

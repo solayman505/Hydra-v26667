@@ -1,4 +1,4 @@
-axios = require("axios");
+const axios = require("axios");
 
 module.exports = {
   config: {
@@ -6,21 +6,21 @@ module.exports = {
     version: "1.0",
     author: "Lahatra",
     shortDescription: {
-      fr: "Obtiens l'âge approximatif d'une personne en fonction de son prénom",
+      en: "Get the approximate age of a person based on their first name",
     },
     longDescription: {
-      fr: "Cette commande renvoie l'âge approximatif d'une personne en fonction de son prénom. Usage: !agify [prénom]",
+      en: "This command returns the approximate age of a person based on their first name. Usage: !agify [first name]",
     },
     category: "fun",
     guide: {
-      fr: "{prefix}agify [prénom]",
+      en: "{prefix}agify [first name]",
     },
   },
 
   onStart: async function ({ api, event, args }) {
     try {
       if (args.length === 0) {
-        api.sendMessage("Oops, tu dois spécifier un prénom pour obtenir l'âge approximatif !", event.threadID, event.messageID);
+        api.sendMessage("Oops, you need to specify a first name to get an approximate age!", event.threadID, event.messageID);
         return;
       }
 
@@ -30,11 +30,11 @@ module.exports = {
       const response = await axios.get(url);
       const age = response.data.age;
 
-      api.sendMessage(`Selon mes calculs, ${name} a environ ${age} ans. Mais bon, c'est qu'une estimation !`, event.threadID, event.messageID);
+      api.sendMessage(`According to my calculations, ${name} is approximately ${age} years old. But hey, it's just an estimate!`, event.threadID, event.messageID);
 
     } catch (error) {
       console.error(error);
-      api.sendMessage("Eh merde, j'ai pas réussi à trouver l'âge de cette personne... Désolée!", event.threadID, event.messageID);
+      api.sendMessage("Oops, I couldn't find the estimated age for this person... Sorry!", event.threadID, event.messageID);
     }
   },
 };

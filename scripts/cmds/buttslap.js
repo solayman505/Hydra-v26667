@@ -12,7 +12,7 @@ module.exports = {
         role: 0,
         shortDescription: "buttslap someone",
         longDescription: "",
-        category: "Entertainment",
+        category: "fun",
         guide: "{pn}"
     },
 

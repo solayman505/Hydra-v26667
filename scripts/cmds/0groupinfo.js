@@ -4,8 +4,8 @@ const request = require("request");
 module.exports = {
 config: {
 		name: "groupinfo",
-    aliases: ['boxinfo'],
-    version: "1.0",
+    		aliases: ['infobox'],
+    		version: "1.0",
 		author: "Loid Butter",
 		countDown: 5,
 		role: 0,

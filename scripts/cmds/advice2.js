@@ -12,7 +12,7 @@ module.exports = {
     longDescription: {
       en: 'Get a random advice.',
     },
-    category: 'media',
+    category: 'tools',
     guide: {
       en: '{prefix} <>',
     },

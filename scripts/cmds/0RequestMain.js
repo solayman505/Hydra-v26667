@@ -7,7 +7,7 @@ const approvedIDsPath = path.join(__dirname, "assist_json", "approved_main.json"
 
 module.exports = {
 	config: {
-		name: "requestMAIN",
+		name: "aprove",
 		version: "1.1",
 		author: "SiAM",
 		countDown: 5,

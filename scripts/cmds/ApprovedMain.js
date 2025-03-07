@@ -7,7 +7,7 @@ module.exports = {
     version: "1.0",
     author: "Samuel Kâñèñgeè",
     countDown: 5,
-    category:"admin",
+    category:"owner",
     role: 2
   },
 

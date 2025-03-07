@@ -14,7 +14,7 @@ module.exports = {
     longDescription: {
       en: "Converts text to binary using an API."
     },
-    category: "study",
+    category: "tools",
     guide: {
       en: "{pn} [encode/decode] [text]"
     }

@@ -1,12 +1,13 @@
 module.exports = {
   config: {
     name: "calculate",
+    aliases:["cal"],
     version: "1.0",
     author: "AceGun",
     role: 0,
     colldown: 5,
     shortDescription: "Perform basic arithmetic calculations.",
-    category: "utility",
+    category: "tools",
     guide: "{prefix}calculate <expression>"
   },
   onStart: async function ({ message, args }) {

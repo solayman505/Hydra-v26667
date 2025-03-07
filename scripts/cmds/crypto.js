@@ -11,7 +11,7 @@ module.exports = {
     role: 0,
     shortDescription: "crypto",
     longDescription: "crypto",
-    category: "economy",
+    category: "tools",
   }, 
   onStart: async function({api, event, args}) {
     var type;

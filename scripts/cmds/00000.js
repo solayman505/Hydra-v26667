@@ -250,7 +250,7 @@ module.exports = {
 
     config: {
 
-        name: 'l',
+        name: 'gpt0',
 
         version: '1.2.0',
 

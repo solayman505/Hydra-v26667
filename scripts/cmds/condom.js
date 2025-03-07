@@ -44,7 +44,6 @@ module.exports = {
 };
 async function bal(one) {
   const avatarone = await jimp.read(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`);
-  const image = await jimp.read("https://i.imgur.com/cLEixM0.jpg");
   image.resize(512, 512).composite(avatarone.resize(263, 263), 256, 258);
   const imagePath = "condom.png";
   await image.writeAsync(imagePath);

@@ -10,7 +10,7 @@ module.exports = {
     role: 0,
     shortDescription: "Get Random Fact",
     longDescription: "Get Random Fact",
-    category: "Study",
+    category: "tools",
     guide: "{pn}"
   },
 

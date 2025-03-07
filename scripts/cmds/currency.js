@@ -5,7 +5,7 @@ module.exports = {
     name: "currency",
     version: "1",
     author: "Samir Œ",
-    category: "currency",
+    category: "tools",
   },
 
   onStart: async function ({ api, event, args }) {   
