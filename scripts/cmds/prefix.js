@@ -29,8 +29,8 @@ module.exports = {
 𝗕𝗼𝘁 𝗢𝘄𝗻𝗲𝗿: ${ownerName}\n𝗜𝗗: ${ownerUID}\n
 Have fun using it, enjoy! ❤️`,
 				ownerUID,
-				event.threadID,
-				await global.utils.getStreamFromURL("https://i.imgur.com/M4luPbE.gif") // Attachment
+				event.threadID
+			
 			);
 		}
 	}
