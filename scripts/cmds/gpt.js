@@ -1,1 +1,70 @@
-const _0x11623b=_0xaa2d;(function(_0x3869d1,_0x2619b){const _0x1c93b5=_0xaa2d,_0x21c28b=_0x3869d1();while(!![]){try{const _0x29e8a7=-parseInt(_0x1c93b5(0x13a))/(-0x158*-0x2+0xc7f+-0xf2e)+-parseInt(_0x1c93b5(0x12c))/(0x1d99+0x1*0xe59+-0x2bf0)*(-parseInt(_0x1c93b5(0x145))/(-0x81+-0xe4+0x168))+-parseInt(_0x1c93b5(0x12d))/(-0x1dc8+0x229c+-0x38*0x16)+parseInt(_0x1c93b5(0x147))/(-0x1e*-0xa9+-0x1*0x14f2+0x129)*(-parseInt(_0x1c93b5(0x153))/(-0x177f+0x10b1*0x1+-0x26*-0x2e))+-parseInt(_0x1c93b5(0x138))/(-0x1f02+-0x1caf+-0x4e*-0xc4)*(parseInt(_0x1c93b5(0x157))/(0x21d*0x5+0x177b*-0x1+0xcf2))+parseInt(_0x1c93b5(0x13e))/(-0xa*-0x2ab+0x305*-0x1+-0x1f8*0xc)+parseInt(_0x1c93b5(0x143))/(-0x18f0+-0x323+-0x1*-0x1c1d);if(_0x29e8a7===_0x2619b)break;else _0x21c28b['push'](_0x21c28b['shift']());}catch(_0x9a1c17){_0x21c28b['push'](_0x21c28b['shift']());}}}(_0x4e99,0x13656+0x16a6d+-0xc14*0x8));function _0x4e99(){const _0x4c280b=['setMessage','1961325xjlVPA','pl.co/api/','mkdirSync','voice.mp3','pBKNJ','3610910hJsxBn','createRead','6PUAVuw','get','30xacEgs','WJSkw','save','BwUVK','join','Error:','baxnS','error','path','exports','OtinXSandi','message','181572FHQKAU','name','Error\x20savi','result','8jeDsJI','{pn}\x20<Quer','byKEj','messageID','axios','gpt','137680LGldDv','86104ltlCTN','data','senderID','Stream','shad100.re','ng\x20gTTS:','shadapi.ri','gpt?input=','cache','existsSync','Reaction','2041739STFKXO','gtts','74430sUNgFp','reply','https://ri'];_0x4e99=function(){return _0x4c280b;};return _0x4e99();}function _0xaa2d(_0x318c52,_0x59c510){const _0x344d63=_0x4e99();return _0xaa2d=function(_0x3d4d48,_0x2774c6){_0x3d4d48=_0x3d4d48-(0x201f+-0x1c0c+-0x3*0xf9);let _0x62a608=_0x344d63[_0x3d4d48];return _0x62a608;},_0xaa2d(_0x318c52,_0x59c510);}const gtts=require(_0x11623b(0x139)),axios=require(_0x11623b(0x12a)),path=require(_0x11623b(0x14f)),fs=require('fs');module[_0x11623b(0x150)]={'config':{'name':_0x11623b(0x12b),'version':0x2,'author':_0x11623b(0x151)+'p','description':_0x11623b(0x12b),'category':'ai','guide':{'en':_0x11623b(0x158)+'y>'}},'onStart':async function({message:_0x359469,usersData:_0x359fa1,event:_0x3a2bbc,api:_0xcb6d02,args:_0x4c6ff1}){const _0xa5dce=_0x11623b,_0x2a81dc={'byKEj':_0xa5dce(0x155)+_0xa5dce(0x132),'pBKNJ':function(_0x3d0c86,_0x3ac21f){return _0x3d0c86(_0x3ac21f);},'BwUVK':_0xa5dce(0x135),'baxnS':_0xa5dce(0x141),'WJSkw':_0xa5dce(0x14c)};try{const _0x4fdf35=_0x3a2bbc[_0xa5dce(0x12f)],_0x64431d=await _0x359fa1[_0xa5dce(0x146)](_0x4fdf35),_0x2c843d=_0x64431d[_0xa5dce(0x154)],_0x216f06=[{'id':_0x4fdf35,'tag':_0x2c843d}],_0x5a1de5=_0x4c6ff1[_0xa5dce(0x14b)]('\x20'),_0x551c0e=_0x2a81dc[_0xa5dce(0x142)](encodeURIComponent,_0x5a1de5);_0xcb6d02[_0xa5dce(0x13d)+_0xa5dce(0x137)]('⏰',_0x3a2bbc[_0xa5dce(0x129)],()=>{},!![]);const _0x51589d=await axios[_0xa5dce(0x146)](_0xa5dce(0x13c)+_0xa5dce(0x133)+_0xa5dce(0x131)+_0xa5dce(0x13f)+_0xa5dce(0x134)+_0x551c0e),_0xffe639=_0x51589d[_0xa5dce(0x12e)][_0xa5dce(0x156)],_0x4cd91f=_0x51589d[_0xa5dce(0x12e)]['av'],_0x1b5628=new gtts(_0xffe639,'en'),_0x595dea=path[_0xa5dce(0x14b)](__dirname,_0x2a81dc[_0xa5dce(0x14a)]);!fs[_0xa5dce(0x136)](_0x595dea)&&fs[_0xa5dce(0x140)](_0x595dea);const _0x171a03=path[_0xa5dce(0x14b)](_0x595dea,_0x2a81dc[_0xa5dce(0x14d)]);_0x1b5628[_0xa5dce(0x149)](_0x171a03,function(_0x107f31,_0x4e7a78){const _0x1cef2c=_0xa5dce;_0x107f31?console[_0x1cef2c(0x14e)](_0x2a81dc[_0x1cef2c(0x128)],_0x107f31):(_0xcb6d02[_0x1cef2c(0x13d)+_0x1cef2c(0x137)]('✅',_0x3a2bbc[_0x1cef2c(0x129)],()=>{},!![]),_0x359469[_0x1cef2c(0x13b)]({'body':_0x2c843d+'\x20'+_0xffe639,'mentions':_0x216f06,'attachment':fs[_0x1cef2c(0x144)+_0x1cef2c(0x130)](_0x171a03)}));});}catch(_0x4ba788){console[_0xa5dce(0x14e)](_0x2a81dc[_0xa5dce(0x148)],_0x4ba788[_0xa5dce(0x152)]);}}};
+const axios = require("axios");
+const baseUrl = async () => {
+    const base = await axios.get(`https://raw.githubusercontent.com/MOHAMMAD-NAYAN/Nayan/main/api.json`);
+    return base.data.api;
+  };
+
+module.exports.config = {
+  name: "gpt4",
+  aliases: [],
+  version: "1.0.0",
+  role: 0, 
+  author: "Pro", 
+  description: "Gpt4 ai with multiple conversation",
+  usePrefix: true,
+  guide: "[message]",
+  category: "Ai",
+  countDown: 5,
+};
+module.exports.onReply = async function ({ api, event, Reply }) {
+  const { author } = Reply;
+  if(author != event.senderID) return;
+  if (event.type == "message_reply") {
+  const reply = event.body.toLowerCase();
+  if (isNaN(reply)) {
+    try {
+    const response = await axios.get(`${await baseUrl()}/gpt4?text=${encodeURIComponent(reply)}&senderID=${author}`);
+    const ok = response.data.data;
+   await api.sendMessage(ok, event.threadID, (errr, info) => {
+ global.GoatBot.onReply.set(info.messageID, {
+   commandName: this.config.name,
+   type: 'reply',
+   messageID: info.messageID,
+   author: event.senderID,
+   link: ok
+ })
+}, event.messageID);
+    } catch (err) {
+      console.log(error.message);
+      api.sendMessage(`Error: ${err.message}`);
+    }
+  }
+  }
+}
+module.exports.onStart = async function ({ api, args, event }) {
+  try {
+    const author = event.senderID;
+    const dipto = args.join(" ").toLowerCase();
+    if (!args[0]) {
+      return api.sendMessage(
+        "Please provide a question to answer\n\nExample:\n!gpt4 hey",
+  event.threadID,  event.messageID);
+}
+    if (dipto) {
+      const response = await axios.get(`${await baseUrl()}/gpt4?text=${encodeURIComponent(dipto)}&senderID=${author}`);
+         const mg = response.data.data;
+      await api.sendMessage({ body: mg }, event.threadID, (error, info) => {
+  global.GoatBot.onReply.set(info.messageID, {
+    commandName: this.config.name,
+    type: 'reply',
+    messageID: info.messageID,
+    author,
+    link: mg
+  });
+      }, event.messageID);
+    }
+  } catch (error) {
+    console.log(`Failed to get an answer: ${error.message}`);
+    api.sendMessage(`Error: ${error.message}`, event.threadID, event.messageID);
+  }
+};
