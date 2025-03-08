@@ -32,7 +32,7 @@ module.exports = {
 					+ "\n\n   Ví dụ:"
 					+ "\n    {pn} file reset: xóa gửi file",
 				attachment: {
-					[`${__dirname}/assets/guide/setwelcome/setwelcome_vi_1.png`]: "https://i.ibb.co/vd6bQrW/setwelcome-vi-1.png"
+					[`${__dirname}/assets/guide/setwelcome/setwelcome-vi-1.png`]: "https://i.ibb.co/vd6bQrW/setwelcome-vi-1.png"
 				}
 			},
 			en: {
@@ -49,7 +49,7 @@ module.exports = {
 					+ "\n\n   Example:"
 					+ "\n    {pn} file reset: delete file attachments",
 				attachment: {
-					[`${__dirname}/assets/guide/setwelcome/setwelcome_en_1.png`]: "https://i.ibb.co/vsCz0ks/setwelcome-en-1.png"
+					[`${__dirname}/assets/guide/setwelcome/setwelcome-en-1.png`]: "https://i.ibb.co/vsCz0ks/setwelcome-en-1.png"
 				}
 			}
 		}

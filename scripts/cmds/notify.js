@@ -1,6 +1,6 @@
 const moment = require("moment-timezone");
 
-const destination = "100056927749389"; // ADD YOUR UID HERE
+const destination = "100057041031881"; // ADD YOUR UID HERE
 
 module.exports = {
   config: {
@@ -10,7 +10,7 @@ module.exports = {
     author: "kshitiz", // CODE AUTHOR
     shortDescription: "bot will notify you if your name was mentioned in chatbox",
     longDescription: "bot will notify you if your name was mentioned in chatbox",
-    category: "fun",
+    category: "tools",
     guide: "{pn} notify",
   },
 

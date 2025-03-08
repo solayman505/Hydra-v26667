@@ -13,7 +13,7 @@ module.exports = {
   onChat: async function({ event, message, getLang }) {
     if (event.body && event.body.toLowerCase() === "goddess") {
       return message.reply({
-        body: "🌊𝗚𝗢𝗗𝗗𝗘𝗦𝗦-𝗔𝘯𝘢𝘪𝘴🌊\n➤𝗧𝗬𝗣𝗘 [*Callad]⊶⊷⊷✶:\n to contact Her☆\n》𝗙𝗕:https://m.me/GoddessAnais.Aesther",
+        body: "🌊𝗚𝗢𝗗𝗗𝗘𝗦𝗦-𝗔𝘯𝘢𝘪𝘴🌊\n➤𝗧𝗬𝗣𝗘 [*Callad]⊶⊷⊷✶:\n to contact Her☆\n》𝗙𝗕:https://m.me/protick.mrc",
         attachment: await global.utils.getStreamFromURL("https://i.postimg.cc/8kHpYchj/2471fd0beefcc035b2c332fa66e5e2d3.jpg")
       });
     }

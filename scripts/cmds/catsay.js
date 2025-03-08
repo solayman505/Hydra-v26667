@@ -15,7 +15,7 @@ module.exports = {
     longDescription: {
       en: ""
     },
-    category: "Edit-img",
+    category: "image",
     guide: {
       en: "{p}catsay"
     }

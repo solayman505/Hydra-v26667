@@ -9,7 +9,7 @@ config: {
 		role: 0,
 		shortDescription: "Write Bloody Text Through textpro.me",
 		longDescription: "Write Bloody Text Through textpro.me",
-		category: "textpro",
+		category: "tools",
 		guide: {
       en: "{p}{n} query",
     }

@@ -2,15 +2,15 @@ const fs = require("fs-extra");
 
 module.exports = {
   config: {
-    name: "delmsg", 
-    aliases: ["delmsg"], 
+    name: "delall", 
+    aliases: ["delall"], 
     version: "1.0.1", 
     author: "Xemon", 
     countDown: 5,
     role: 0,
     shortDescription: "Delete message", 
     longDescription: "Delete all message from bot ACC", 
-    category: "owner", 
+    category: "tols", 
     guide: "{pn} delmsg"
 
   }, 

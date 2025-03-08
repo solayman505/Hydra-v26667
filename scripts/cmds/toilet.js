@@ -16,9 +16,7 @@ module.exports = {
  category: "fun",
  guide: "{pn}"
  },
-
-
-
+ 
  onStart: async function ({ message, event, args }) {
  const mention = Object.keys(event.mentions);
  if (mention.length == 0) return message.reply("Please mention someone");

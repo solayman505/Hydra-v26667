@@ -42,7 +42,7 @@
         { "keyword": "vala", "reply": "Sure! Keep smiling!" },
         { "keyword": "thanks", "reply": "Welcome! Always pleasure!" },
         { "keyword": "friend", "reply": "Friend-e jodi shei hishab hoy..." },
-        { "keyword": "arre", "reply": "Hey bol keno chol gelo?" }
+        { "keyword": "arre", "reply": "Hey bol keno chol gelo?" },
         
         { "keyword": "bhalobashi", "reply": "Ami o tomake bhalobashi!" },
         { "keyword": "miss kori", "reply": "Ami o tomake onek miss kori." },

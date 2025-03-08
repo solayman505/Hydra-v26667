@@ -16,20 +16,8 @@ module.exports = {
 			vi: 'Thêm một phím tắt cho tin nhắn trong nhóm chat của bạn',
 			en: 'Add a shortcut for your message in group chat'
 		},
-		category: 'custom',
+		category: 'tools',
 		guide: {
-			vi: '   {pn} add <word> => <content>: thêm một phím tắt cho bạn (có thể gửi kèm hoặc phản hồi một tin nhắn có file để thêm tệp đính kèm)'
-				+ '\n   Ví dụ:\n    {pn} add hi => Xin chào mọi người'
-				+ '\n'
-				+ '\n   {pn} del <word>: xóa một phím tắt'
-				+ '\n   Ví dụ:\n    {pn} del hi'
-				+ '\n'
-				+ '\n   {pn} [reomve | reset]: xóa bỏ tất cả các phím tắt trong nhóm chat của bạn'
-				+ '\n'
-				+ '\n   {pn} list: xem danh sách tất cả các phím tắt của bạn'
-				+ '\n   {pn} list start <keyword>: xem danh sách các phím tắt của bạn bắt đầu bằng từ khóa <keyword>'
-				+ '\n   {pn} list end <keyword>: xem danh sách các phím tắt của bạn kết thúc bằng từ khóa <keyword>'
-				+ '\n   {pn} list contain <keyword>: xem danh sách các phím tắt của bạn có chứa từ khóa <keyword>',
 			en: '   {pn} add <word> => <content>: add a shortcut for you (you can send or reply a message with file to add attachment)'
 				+ '\n   Example:\n    {pn} add hi => Hello everyone'
 				+ '\n'
@@ -47,28 +35,6 @@ module.exports = {
 
 	langs: {
 		vi: {
-			missingContent: 'Vui lòng nhập nội dung tin nhắn',
-			shortcutExists: 'Shortcut %1 đã tồn tại, thả cảm xúc bất kì vào tin nhắn này để thay thế nội dung của shortcut',
-			shortcutExistsByOther: 'Shortcut %1 đã được thêm vào bởi thành viên khác, vui lòng thử từ khóa khác',
-			added: 'Đã thêm shortcut %1 => %2',
-			addedAttachment: ' với %1 tệp đính kèm',
-			missingKey: 'Vui lòng nhập từ khóa của shortcut muốn xóa',
-			notFound: 'Không tìm thấy shortcut nào cho từ khóa %1 trong nhóm chat của bạn',
-			onlyAdmin: 'Chỉ quản trị viên mới có thể xóa shortcut của người khác',
-			deleted: 'Đã xóa shortcut %1',
-			empty: 'Nhóm chat của bạn chưa thêm shortcut nào',
-			message: 'Tin nhắn',
-			attachment: 'Tệp đính kèm',
-			list: 'Danh sách các shortcut của bạn',
-			listWithTypeStart: 'Danh sách các shortcut của nhóm bạn (bắt đầu bằng "%1")',
-			listWithTypeEnd: 'Danh sách các shortcut của nhóm bạn (kết thúc bằng "%1")',
-			listWithTypeContain: 'Danh sách các shortcut của nhóm bạn (chứa "%1")',
-			listWithTypeStartNot: 'Nhóm bạn không có shortcut nào bắt đầu bằng "%1"',
-			listWithTypeEndNot: 'Nhóm bạn không có shortcut nào kết thúc bằng "%1"',
-			listWithTypeContainNot: 'Nhóm bạn không có shortcut nào chứa "%1"',
-			onlyAdminRemoveAll: 'Chỉ quản trị viên mới có thể xóa tất cả các shortcut trong nhóm chat',
-			confirmRemoveAll: 'Bạn có chắc muốn xóa tất cả các shortcut trong nhóm chat này không? (thả cảm xúc vào tin nhắn này để xác nhận)',
-			removedAll: 'Đã xóa tất cả các shortcut trong nhóm chat của bạn'
 		},
 		en: {
 			missingContent: 'Please enter the message content',
@@ -144,7 +110,7 @@ module.exports = {
 			case 'delete': {
 				const key = args.slice(1).join(' ')?.trim()?.toLowerCase();
 				if (!key)
-					return message.reply(getLang('missingKey'));
+					return messagez.reply(getLang('missingKey'));
 				const index = shortCutData.findIndex(x => x.key === key);
 				if (index === -1)
 					return message.reply(getLang('notFound', key));

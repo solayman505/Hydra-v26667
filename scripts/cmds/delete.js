@@ -3,8 +3,8 @@ module.exports = {
     name: "delete",
     aliases: ["del"],
     author: "S",
-role: 2,
-    category: "system"
+    role: 2,
+    category: "tools"
   },
 
   onStart: async function ({ api, event, args }) {

@@ -10,7 +10,7 @@ module.exports = {
     role: 0,
     shortDescription: "",
     longDescription: "Insult someone by using this cmd",
-    category: "",
+    category: "tools",
     guide: "{pn} @mention",
   },
 
@@ -25,7 +25,7 @@ module.exports = {
 
       const mentionName = event.mentions[mention[0]].replace("@", ""); 
 
-      if (mentionName.toLowerCase().includes("kshitiz")) {//replace kshitiz with your name
+      if (mentionName.toLowerCase().includes("Xrotick")) {//replace kshitiz with your name
         api.sendMessage("Ayo Gay You can't insult my owner🤬 ", event.threadID);
         return;
       }

@@ -6,7 +6,7 @@ const allowedUsers = [
 module.exports = {
 	config: {
 		name: "td",
-    aliases: ["tod"],
+    		aliases: ["tod"],
 		version: "1.0",
 		author: "Loid Butter",
 		countDown: 5,

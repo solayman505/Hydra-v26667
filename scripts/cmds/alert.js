@@ -11,7 +11,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "Alert Message As Notification",
 		longDescription: "Alert Message As Notification",
-		category: "img-edit",
+		category: "image",
 		guide: "{p}{n}"
 	},
 

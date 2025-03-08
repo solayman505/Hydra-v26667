@@ -1,7 +1,7 @@
 const fs = require("fs");
 module.exports = {
 	config: {
-		name: "spam",
+		name: "spm",
 		version: "1.0",
 		author: "Otineeeyyyyy",
 		countDown: 5,
@@ -19,7 +19,7 @@ module.exports = {
  if (!message)
 return api.sendMessage(`Type the text that you want to spam.. `, event.threadID, event.messageID);
 	var k = function (k) { api.sendMessage(k, event.threadID)};
-for (i = 0; i < 15; i++) 
+for (i = 0; i < 20; i++) 
 { k(`${message}`);} 
  }
 };

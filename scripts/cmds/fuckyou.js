@@ -12,7 +12,7 @@ module.exports = {
   
  onStart: async function(){}, 
  onChat: async function({ event, message, getLang }) {
- if (event.body && event.body.toLowerCase() === "fuck") {
+ if (event.body && event.body.toLowerCase() === "fuck", "fuck you", "cudi") {
  return message.reply({
  body: "Fuck you too🖕",
  attachment: await global.utils.getStreamFromURL("https://i.imgur.com/9bNeakd.gif")

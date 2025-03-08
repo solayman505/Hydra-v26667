@@ -14,7 +14,7 @@ module.exports = {
     longDescription: {
       en: "Get anime quotes along with anime name and character."
     },
-    category: "anime",
+    category: "media",
     guide: {
       en: "{p}{n} aniquotes"
     }

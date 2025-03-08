@@ -18,7 +18,7 @@ module.exports = {
       
       en: "Redeem money"
     },
-    category: "free",
+    category: "tools",
     guide: {
       
       en: "{pn} <code>"
@@ -29,7 +29,7 @@ module.exports = {
     const userSenderID = event.senderID;
 
     const lastRedeem = lastRedeemTime[userSenderID];
-    const currentTime = moment.tz("Asia/Jakarta"); 
+    const currentTime = moment.tz("Asia/Dhaka"); 
 
     if (lastRedeem && currentTime.diff(lastRedeem, 'days') < 7) {
       return message.reply("redeem again tomorrow with new redeem code.");

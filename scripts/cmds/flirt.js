@@ -2,7 +2,7 @@
 module.exports = {
 	config: {
 		name: "flirt",
-    aliases: ["baby"],
+    		aliases: ["baby"],
 		version: "1.0",
 		author: "otineeeeeyyyyyyyyyyyy",
 		role: 0,

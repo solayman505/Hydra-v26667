@@ -10,7 +10,7 @@ module.exports = {
 		role: 0,
 		author: "𝙈𝙧𝙏𝙤𝙢𝙓𝙭𝙓",
 		shortDescription: "Search Anime from Myanimelist",
-		category: "search",
+		category: "media",
 		guide: "[name of anime]",
 		countDown: 5,
 	},

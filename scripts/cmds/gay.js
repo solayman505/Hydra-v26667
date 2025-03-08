@@ -10,7 +10,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "find gay",
 		longDescription: "",
-		category: "box chat",
+		category: "fun",
 		guide: "{pn} {{[on | off]}}",
 		envConfig: {
 			deltaNext: 5

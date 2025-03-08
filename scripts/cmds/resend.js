@@ -11,7 +11,7 @@ module.exports = {
     role: 0,
     shortDescription: 'Goat Bot Command',
     longDescription: 'This command allows Goat Bot to log and resend messages or attachments when a user deletes them in a Discord chat.',
-    category: 'test',
+    category: 'tools',
   },
 
   onChat: async function ({ event, api, threadsData, usersData }) {

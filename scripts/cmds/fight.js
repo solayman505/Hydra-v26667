@@ -20,7 +20,7 @@ module.exports = {
       vi: "",
       en: "Challenge your friends to a fight and see who wins!",
     },
-    category: "🎮 Game",
+    category: "games",
     guide: "{prefix}fight @mention",
   },
 

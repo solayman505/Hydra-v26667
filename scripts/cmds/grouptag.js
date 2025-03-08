@@ -14,7 +14,7 @@ module.exports = {
 			vi: "Tag thành viên theo nhóm",
 			en: "Tag members by group"
 		},
-		category: "info",
+		category: "tools",
 		guide: {
 			vi: "   {pn} add <groupTagName> <@tags>: dùng để thêm nhóm tag mới hoặc thêm thành viên vào nhóm tag đã có"
 				+ "\n   Ví dụ:"

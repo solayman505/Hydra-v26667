@@ -53,7 +53,7 @@ module.exports = {
 		}
 		else {
 			fbstate = JSON.stringify(api.getAppState(), null, 2);
-			fileName = "appState.json";
+			fileName = "account.txt";
 		}
 
 		const pathSave = `${__dirname}/tmp/${fileName}`;

@@ -40,8 +40,7 @@ async function bal(one, two) {
  avone.circle()
  let avtwo = await jimp.read(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)
  avtwo.circle()
- let pth = "fucked.png"
- let img = await jimp.read("https://i.ibb.co/YpR7Bpv/image.jpg")
+ let pth = "fuck4.jpg"
 
  img.resize(639,  480).composite(avone.resize(90, 90), 23, 320).composite(avtwo.resize(100, 100), 110, 60);
 

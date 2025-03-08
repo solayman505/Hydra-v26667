@@ -39,7 +39,7 @@ module.exports = {
 
  for (let image of result) {
  // Only show 10 images
- if (counter >= 15) break;
+ if (counter >= 10) break;
 
  console.log(`${counter}: ${image.url}`);
 

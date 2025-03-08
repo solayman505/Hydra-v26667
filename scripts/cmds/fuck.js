@@ -5,7 +5,7 @@ const fs = require("fs")
 
 module.exports = {
  config: {
- name: "fuck3",
+ name: "fuck",
  aliases: ["fuckv3"],
  version: "1.0",
  author: "Upen Basnet & remake by AceGun", //don't edit author name or G'ban
@@ -13,7 +13,7 @@ module.exports = {
  role: 0,
  shortDescription: "@mention",
  longDescription: "",
- category: "fun",
+ category: "18+",
  guide: "{pn}"
  },
 
@@ -41,7 +41,6 @@ async function bal(one, two) {
  let avtwo = await jimp.read(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)
  avtwo.circle()
  let pth = "abcd.png"
- let img = await jimp.read("https://i.imgur.com/fUv6kIF.jpg")
 
  img.resize(1080, 1350).composite(avone.resize(200, 200), 77, 164).composite(avtwo.resize(235, 235), 500, 170);
 

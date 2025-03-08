@@ -7,7 +7,7 @@ const { commands, aliases } = global.GoatBot;
 const doNotDelete = "【﻿H Y D R A】";
 module.exports = {
   config: {
-    name: "help",
+    name: "help2",
     version: "1.29",
     author: "Protick",
     countDown: 5,

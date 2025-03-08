@@ -14,7 +14,7 @@ module.exports = {
 		category: "admin",
 		guide: {
 			vi: "{pn} [tid,blank]",
-			en: "{pn} [tid,blank]"
+			en: "{pn} [tid,blank]",
 		}
 	},
 

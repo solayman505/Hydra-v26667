@@ -7,7 +7,7 @@ module.exports = {
     version: '1.0.0',
     author: 'RazihelX',
     role: 0,
-    category: 'utility',
+    category: 'tools',
     shortDescription: {
       en: 'Generate a random number within a given range'
     },

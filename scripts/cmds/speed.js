@@ -10,7 +10,7 @@ module.exports = {
     role: 2,
     shortDescription: "Check system speed",
     longDescription: "Check system speed",
-    category: "owner",
+    category: "tools",
     guide: "{pn}"
   },
 

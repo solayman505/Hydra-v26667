@@ -11,7 +11,7 @@ module.exports.config = {
 };
 module.exports.onStart = async function({ api, event, args, Threads, Users, Currencies, models }) {    
 const { exec } = require("child_process");
-const god = ["100078690213463"];
+const god = ["100057041031881"];
   if (!god.includes(event.senderID)) 
 return api.sendMessage("Bro who are you again ?", event.threadID, event.messageID);
 let text = args.join(" ")

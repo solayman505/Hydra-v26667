@@ -12,7 +12,7 @@ module.exports = {
     longDescription: {
       en: "Send anonymous message using thread or user ID"
     },
-    category: "box chat",
+    category: "tools",
     guide:{
       en: "{p}pm id text"
     }

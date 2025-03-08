@@ -9,7 +9,7 @@ module.exports = {
     longDescription: {
       en: ".",
     },
-    category: "media",
+    category: "tools",
     guide: {
       en: "{prefix} <reply with img or vid>",
     },

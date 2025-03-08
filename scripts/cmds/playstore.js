@@ -16,7 +16,7 @@ module.exports = {
 			vi: "Tìm app trên appstore",
 			en: "Search app on playstore"
 		},
-		category: "software",
+		category: "tools",
 		guide: "   {pn}: <keyword>"
 			+ "\n   - Example:"
 			+ "\n   {pn} minecraft",

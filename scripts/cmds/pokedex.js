@@ -11,7 +11,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "View your pokemons",
 		longDescription: "",
-		category: "Pokemon",
+		category: "fun",
 		guide: "{pn}"
 	},
 

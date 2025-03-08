@@ -11,7 +11,7 @@ module.exports = {
  longDescription : {
  en: "Know your destiny and know who you will complete your life with",
  },
- category: "love",
+ category: "fun",
  guide: {
  en: "{pn}"
  }

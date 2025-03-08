@@ -10,7 +10,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "lookup at dictionary",
 		longDescription: "",
-		category: "study",
+		category: "tools",
 		guide: {
 			vi: "{pn} [words]",
 			en: "{pn} [words]"
