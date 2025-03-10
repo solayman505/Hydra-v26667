@@ -2,14 +2,14 @@ const axios = require("axios");
 
 const baseApiUrl = async () => {
   const base = await axios.get(
-    `https://raw.githubusercontent.com/MOHAMMAD-NAYAN/Nayan/main/api.json`
+    `https://nazrul-xyz.onrender.com`
   );
   return base.data.mostakim;
 };
 module.exports.config = {
   name: "4k",
   aliases: ["4k", "remini"],
-  category: "enhanced",
+  category: "tools",
   author: "Romim"
 };
 
@@ -24,7 +24,7 @@ module.exports.onStart = async ({ api, event, args }) => {
     const Romim = event.messageReply?.attachments[0]?.url;
 
 
-    const apiUrl = (`${await baseApiUrl()}/remini?input=${encodeURIComponent(Romim)}`);
+    const apiUrl = (`${await baseApiUrl()}/nazrul/remini?url=${encodeURIComponent(Romim)}`);
  
 
     const imageStream = await axios.get(apiUrl,{

@@ -2,6 +2,7 @@ const axios = require('axios');
 const fs = require('fs-extra');
 const path = require('path');
 
+
 module.exports = {
   config: {
     name: "ws",
@@ -41,7 +42,7 @@ module.exports = {
 
 
     try {
-      const response = await axios.get(`https://antr4x.onrender.com/get/searchwallpaper?keyword=${keyword}`);
+      const response = await axios.get(`http://65.109.80.126:20392/img/wallpaper?q=${keyword}`);
 
       if (response.data.status && response.data.img.length > 0) {
    

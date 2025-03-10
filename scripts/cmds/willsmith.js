@@ -12,7 +12,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "slap",
 		longDescription: "",
-		category: "write",
+		category: "tools",
 		guide: {
 			vi: "{pn} text | text",
 			en: "{pn} text | text"
