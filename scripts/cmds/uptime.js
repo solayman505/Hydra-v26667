@@ -102,7 +102,7 @@ module.exports = {
 	config: {
 		name: 'uptime',
 		version: '2.2.0',
-		author: "Xrotick", // Do not change credits
+		author: "Solayman", // Do not change credits
 		countDown: 5,
 		role: 0,
 		shortDescription: 'Shows uptime and system details',
