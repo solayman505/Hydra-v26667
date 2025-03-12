@@ -15,8 +15,8 @@ module.exports = {
 	onChat: async function ({ event, message, api }) {
 		if (event.body && event.body.toLowerCase() === "prefix") {
 			// Bot Owner Information
-			const ownerName = "Xrotick"; // Owner's name
-			const ownerUID = "100057041031881"; // Owner's Facebook ID (replace with actual)
+			const ownerName = "SOLAYMAN"; // Owner's name
+			const ownerUID = "100055151378021"; // Owner's Facebook ID (replace with actual)
 
 			// Send message with contact sharing in one response
 			await api.shareContact(
