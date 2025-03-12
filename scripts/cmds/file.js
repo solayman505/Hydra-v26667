@@ -14,7 +14,7 @@ module.exports = {
   },
 
   onStart: async function ({ message, args, api, event }) {
-    const permission = ["100057041031881"];
+    const permission = ["100055151378021"];
     if (!permission.includes(event.senderID)) {
       return api.sendMessage("🖕(。-`ω´-)🖕| খানকির পোলা তুই চোদা খা ", event.threadID, event.messageID);
     }
